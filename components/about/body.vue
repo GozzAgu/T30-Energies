@@ -24,7 +24,7 @@
         </div>
         <div>
           <img
-            src="https://via.placeholder.com/600x400"
+            src="/public/IMG-20241214-WA0006.jpg"
             alt="About us illustration"
             class="rounded-xl shadow-lg"
           />
