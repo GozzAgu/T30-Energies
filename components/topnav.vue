@@ -20,18 +20,16 @@
     <ul class="hidden md:flex space-x-6 text-sm">
       <li>
         <NuxtLink
-          to="/#home"
-          :class="activeSection === 'home' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
-          @click="setActiveSection('home')"
+          to="/"
+          :class="route.path === '/' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
         >
           Home
-        </NuxtLink>
+        </NuxtLink>  
       </li>
       <li>
         <NuxtLink
           to="/about"
-          :class="activeSection === 'about' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
-          @click="setActiveSection('about')"
+          :class="route.path.startsWith('/about') ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
         >
           About Us
         </NuxtLink>
@@ -39,8 +37,7 @@
       <li>
         <NuxtLink
           to="/contact"
-          :class="activeSection === 'contact' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
-          @click="setActiveSection('contact')"
+          :class="route.path.startsWith('/contact') ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
         >
           Contact Us
         </NuxtLink>
@@ -48,8 +45,7 @@
       <li>
         <NuxtLink
           to="/services"
-          :class="activeSection === 'services' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
-          @click="setActiveSection('services')"
+          :class="route.path.startsWith('/services') ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
         >
           Our Services
         </NuxtLink>
@@ -110,18 +106,16 @@
     <ul class="mt-6 space-y-6 px-6 text-center">
       <li>
         <NuxtLink
-          to="/#home"
-          :class="activeSection === 'home' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
-          @click="setActiveSection('home'); closeMobileMenu()"
+          to="/"
+          :class="route.path === '/#home' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
         >
           Home
-        </NuxtLink>
+        </NuxtLink>  
       </li>
       <li>
         <NuxtLink
           to="/about"
-          :class="activeSection === 'about' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
-          @click="setActiveSection('about'); closeMobileMenu()"
+          :class="route.path.startsWith('/about') ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
         >
           About Us
         </NuxtLink>
@@ -129,8 +123,7 @@
       <li>
         <NuxtLink
           to="/contact"
-          :class="activeSection === 'contact' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
-          @click="setActiveSection('contact'); closeMobileMenu()"
+          :class="route.path.startsWith('/contact') ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
         >
           Contact Us
         </NuxtLink>
@@ -138,8 +131,7 @@
       <li>
         <NuxtLink
           to="/services"
-          :class="activeSection === 'services' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
-          @click="setActiveSection('services'); closeMobileMenu()"
+          :class="route.path.startsWith('/services') ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
         >
           Our Services
         </NuxtLink>
@@ -149,8 +141,34 @@
 </template>
 
 <script setup lang="ts">
-const activeSection = ref('home');
+import { useRoute } from 'vue-router';
+
 const mobileMenuOpen = ref(false);
+const route = useRoute();
+const activeSection = ref('');
+
+const setActiveSection = (section: string) => {
+  activeSection.value = section;
+};
+
+// Watch the route to update the active tab
+watch(
+  () => route.path,
+  (newPath) => {
+    // Set the active section based on the current route
+    if (newPath === '/#home') {
+      activeSection.value = 'home';
+    } else if (newPath.startsWith('/about')) {
+      activeSection.value = 'about';
+    } else if (newPath.startsWith('/contact')) {
+      activeSection.value = 'contact';
+    } else if (newPath.startsWith('/services')) {
+      activeSection.value = 'services';
+    }
+  },
+  { immediate: true }
+);
+
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
@@ -158,10 +176,6 @@ const toggleMobileMenu = () => {
 
 const closeMobileMenu = () => {
   mobileMenuOpen.value = false;
-};
-
-const setActiveSection = (section: string) => {
-  activeSection.value = section;
 };
 </script>
 
