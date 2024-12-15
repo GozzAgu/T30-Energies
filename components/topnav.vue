@@ -19,40 +19,40 @@
 
     <ul class="hidden md:flex space-x-6 text-sm">
       <li>
-        <a
-          href="#home"
+        <NuxtLink
+          to="/#home"
           :class="activeSection === 'home' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
           @click="setActiveSection('home')"
         >
           Home
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a
-          href="#about"
+        <NuxtLink
+          to="/about"
           :class="activeSection === 'about' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
           @click="setActiveSection('about')"
         >
           About Us
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a
-          href="#contact"
+        <NuxtLink
+          to="/contact"
           :class="activeSection === 'contact' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
           @click="setActiveSection('contact')"
         >
           Contact Us
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a
-          href="#services"
+        <NuxtLink
+          to="/services"
           :class="activeSection === 'services' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
           @click="setActiveSection('services')"
         >
           Our Services
-        </a>
+        </NuxtLink>
       </li>
     </ul>
 
@@ -109,40 +109,40 @@
     <!-- Navigation Links -->
     <ul class="mt-6 space-y-6 px-6 text-center">
       <li>
-        <a
-          href="#home"
+        <NuxtLink
+          to="/#home"
           :class="activeSection === 'home' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
           @click="setActiveSection('home'); closeMobileMenu()"
         >
           Home
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a
-          href="#about"
+        <NuxtLink
+          to="/about"
           :class="activeSection === 'about' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
           @click="setActiveSection('about'); closeMobileMenu()"
         >
           About Us
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a
-          href="#contact"
+        <NuxtLink
+          to="/contact"
           :class="activeSection === 'contact' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
           @click="setActiveSection('contact'); closeMobileMenu()"
         >
           Contact Us
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a
-          href="#services"
+        <NuxtLink
+          to="/services"
           :class="activeSection === 'services' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
           @click="setActiveSection('services'); closeMobileMenu()"
         >
           Our Services
-        </a>
+        </NuxtLink>
       </li>
     </ul>
   </div>
