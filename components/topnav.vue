@@ -107,7 +107,7 @@
       <li>
         <NuxtLink
           to="/"
-          :class="route.path === '/#home' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
+          :class="route.path === '/' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
         >
           Home
         </NuxtLink>  
