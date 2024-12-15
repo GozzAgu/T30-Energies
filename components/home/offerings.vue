@@ -43,44 +43,37 @@ const services = [
   {
     icon: "material-symbols:gas-meter-outline-rounded",
     title: "Oil & Gas Exploration",
-    description:
-      "Our expertise in exploration ensures we extract energy resources with maximum efficiency and minimal environmental impact.",
+    description: "Our expertise in exploration ensures we extract energy resources with maximum efficiency and minimal environmental impact.",
   },
   {
-    icon: "material-symbols:language",
+    icon: "material-symbols:globe",
     title: "Global Energy Distribution",
-    description:
-      "We ensure seamless distribution of energy products across the globe, meeting growing demands reliably.",
+    description: "We ensure seamless distribution of energy products across the globe, meeting growing demands reliably.",
   },
   {
     icon: "material-symbols:shield-rounded",
     title: "Safety & Compliance",
-    description:
-      "Our operations adhere to the highest safety standards and regulatory compliance to protect our people and the planet.",
+    description: "Our operations adhere to the highest safety standards and regulatory compliance to protect our people and the planet.",
   },
   {
     icon: "mdi:chart-line",
     title: "Energy Consulting",
-    description:
-      "Our experts provide tailored consulting services to help businesses optimize their energy strategies.",
+    description: "Our experts provide tailored consulting services to help businesses optimize their energy strategies.",
   },
   {
     icon: "material-symbols:eco-rounded",
     title: "Sustainable Solutions",
-    description:
-      "We lead the way in integrating sustainable practices into energy production and distribution.",
+    description: "We lead the way in integrating sustainable practices into energy production and distribution.",
   },
   {
     icon: "material-symbols:support-agent-rounded",
     title: "Customer Support",
-    description:
-      "Our dedicated support team ensures you receive assistance whenever you need it.",
+    description: "Our dedicated support team ensures you receive assistance whenever you need it.",
   },
 ];
 </script>
 
 <style>
-/* Add subtle hover effects for better interactivity */
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);

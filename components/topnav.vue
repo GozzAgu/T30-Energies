@@ -17,7 +17,7 @@
       <i :class="mobileMenuOpen ? 'pi pi-times' : 'pi pi-bars'" class="text-2xl"></i>
     </button>
 
-    <ul class="hidden md:flex space-x-6 text-xs">
+    <ul class="hidden md:flex space-x-6 text-sm">
       <li>
         <a href="#home" class="hover:text-orange-400 transition duration-300">Home</a>
       </li>
