@@ -1,6 +1,5 @@
 <template>
   <section class="bg-gray-50 text-gray-800">
-    <!-- Hero Section -->
     <div class="relative bg-gradient-to-br from-orange-400 to-gray-900 text-white py-24 px-6 lg:px-12">
       <div class="max-w-6xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
@@ -20,12 +19,12 @@
           <div
             v-for="(service, index) in services"
             :key="index"
-            class="group bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-2"
+            class="group bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-2"
           >
             <div
               class="flex items-center justify-center w-16 h-16 mx-auto bg-gradient-to-br from-orange-500 to-orange-400 text-white rounded-full"
             >
-              <i :class="service.icon" class="text-3xl"></i>
+              <Icon :name="service.icon" class="text-3xl" />
             </div>
             <h3 class="mt-6 text-lg font-semibold text-center group-hover:text-orange-500 transition duration-300">
               {{ service.title }}
@@ -103,7 +102,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* Add custom styling if needed */
-</style>

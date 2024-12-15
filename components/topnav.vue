@@ -1,6 +1,5 @@
 <template>
   <nav class="bg-gray-900 text-white fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 shadow-lg z-50">
-    <!-- Logo Section -->
     <div class="flex items-center">
       <img
         src="/public/T30_Energies_Main_Logo[1].png"
@@ -52,7 +51,6 @@
       </li>
     </ul>
 
-    <!-- Desktop Search Bar -->
     <div class="hidden md:flex items-center space-x-4">
       <div class="relative">
         <input
@@ -67,7 +65,6 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
   <div
     :class="[ 
       'fixed inset-0 bg-gray-900 text-white z-50 flex flex-col justify-start transition-transform duration-500',
@@ -75,13 +72,11 @@
     ]"
   >
     <div class="flex items-center justify-between w-full px-6 py-4">
-      <!-- Logo -->
       <img
         src="/public/T30_Energies_Main_Logo[1].png"
         alt="Oil and Gas Company Logo"
         class="h-10 w-auto"
       />
-      <!-- Close Button -->
       <button
         class="text-orange-400 text-lg focus:outline-none"
         @click="closeMobileMenu"
@@ -90,7 +85,6 @@
       </button>
     </div>
 
-    <!-- Search Bar -->
     <div class="relative mt-8 w-3/4 mx-auto">
       <input
         type="text"
@@ -102,7 +96,6 @@
       </span>
     </div>
 
-    <!-- Navigation Links -->
     <ul class="mt-6 space-y-6 px-6 text-center">
       <li>
         <NuxtLink
@@ -151,11 +144,9 @@ const setActiveSection = (section: string) => {
   activeSection.value = section;
 };
 
-// Watch the route to update the active tab
 watch(
   () => route.path,
   (newPath) => {
-    // Set the active section based on the current route
     if (newPath === '/#home') {
       activeSection.value = 'home';
     } else if (newPath.startsWith('/about')) {

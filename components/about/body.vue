@@ -43,7 +43,7 @@
             <div
               class="flex items-center justify-center w-16 h-16 mx-auto bg-orange-100 text-orange-500 rounded-full"
             >
-              <i class="pi pi-users text-3xl"></i>
+              <Icon name="mdi:leaf"  class="text-orange-400 text-3xl"/>
             </div>
             <h4 class="text-lg font-bold mt-4">Sustainability</h4>
             <p class="mt-2 text-gray-600">
@@ -55,7 +55,7 @@
             <div
               class="flex items-center justify-center w-16 h-16 mx-auto bg-orange-100 text-orange-500 rounded-full"
             >
-              <i class="pi pi-chart-line text-3xl"></i>
+              <Icon name="heroicons-outline:light-bulb"  class="text-orange-400 text-3xl"/>
             </div>
             <h4 class="text-lg font-bold mt-4">Innovation</h4>
             <p class="mt-2 text-gray-600">
@@ -67,7 +67,7 @@
             <div
               class="flex items-center justify-center w-16 h-16 mx-auto bg-orange-100 text-orange-500 rounded-full"
             >
-              <i class="pi pi-shield text-3xl"></i>
+              <Icon name="material-symbols:accessible-forward"  class="text-orange-400 text-3xl"/>
             </div>
             <h4 class="text-lg font-bold mt-4">Accessibility</h4>
             <p class="mt-2 text-gray-600">
