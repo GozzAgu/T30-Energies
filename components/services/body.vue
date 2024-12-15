@@ -1,84 +1,37 @@
 <template>
   <section class="bg-gray-50 text-gray-800">
     <!-- Hero Section -->
-    <div class="relative bg-gradient-to-r from-blue-500 to-blue-400 text-white py-20 px-6 lg:px-12">
+    <div class="relative bg-gradient-to-br from-orange-400 to-gray-900 text-white py-24 px-6 lg:px-12">
       <div class="max-w-6xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-          Our <span class="text-white">Services</span>
+          Our <span class="text-orange-300">Services</span>
         </h1>
-        <p class="mt-4 text-lg md:text-xl">
-          Discover how we can help your business grow and thrive.
+        <p class="mt-4 text-lg md:text-xl text-gray-200">
+          Explore how we help businesses thrive with our expert solutions.
         </p>
       </div>
     </div>
 
     <!-- Services Section -->
-    <div class="py-16 px-6 md:px-12 bg-white">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Service Card 1 -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="flex items-center justify-center w-16 h-16 mx-auto bg-blue-100 text-blue-500 rounded-full">
-              <i class="pi pi-chart-line text-3xl"></i>
+    <div class="py-16 px-6 md:px-12 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Service Card -->
+          <div
+            v-for="(service, index) in services"
+            :key="index"
+            class="group bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-2"
+          >
+            <div
+              class="flex items-center justify-center w-16 h-16 mx-auto bg-gradient-to-br from-orange-500 to-orange-400 text-white rounded-full"
+            >
+              <i :class="service.icon" class="text-3xl"></i>
             </div>
-            <h3 class="mt-4 text-2xl font-semibold text-gray-900 text-center">Business Consulting</h3>
-            <p class="mt-2 text-gray-600 text-center">
-              Expert advice to help you navigate challenges and seize opportunities.
-            </p>
-          </div>
-
-          <!-- Service Card 2 -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="flex items-center justify-center w-16 h-16 mx-auto bg-blue-100 text-blue-500 rounded-full">
-              <i class="pi pi-cog text-3xl"></i>
-            </div>
-            <h3 class="mt-4 text-2xl font-semibold text-gray-900 text-center">Custom Solutions</h3>
-            <p class="mt-2 text-gray-600 text-center">
-              Tailored strategies and tools designed for your unique business needs.
-            </p>
-          </div>
-
-          <!-- Service Card 3 -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="flex items-center justify-center w-16 h-16 mx-auto bg-blue-100 text-blue-500 rounded-full">
-              <i class="pi pi-desktop text-3xl"></i>
-            </div>
-            <h3 class="mt-4 text-2xl font-semibold text-gray-900 text-center">Web Development</h3>
-            <p class="mt-2 text-gray-600 text-center">
-              Cutting-edge web design and development to boost your online presence.
-            </p>
-          </div>
-
-          <!-- Service Card 4 -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="flex items-center justify-center w-16 h-16 mx-auto bg-blue-100 text-blue-500 rounded-full">
-              <i class="pi pi-cloud text-3xl"></i>
-            </div>
-            <h3 class="mt-4 text-2xl font-semibold text-gray-900 text-center">Cloud Solutions</h3>
-            <p class="mt-2 text-gray-600 text-center">
-              Scalable and secure cloud services to meet your evolving demands.
-            </p>
-          </div>
-
-          <!-- Service Card 5 -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="flex items-center justify-center w-16 h-16 mx-auto bg-blue-100 text-blue-500 rounded-full">
-              <i class="pi pi-users text-3xl"></i>
-            </div>
-            <h3 class="mt-4 text-2xl font-semibold text-gray-900 text-center">Team Training</h3>
-            <p class="mt-2 text-gray-600 text-center">
-              Empower your team with the skills and knowledge to succeed.
-            </p>
-          </div>
-
-          <!-- Service Card 6 -->
-          <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="flex items-center justify-center w-16 h-16 mx-auto bg-blue-100 text-blue-500 rounded-full">
-              <i class="pi pi-lock text-3xl"></i>
-            </div>
-            <h3 class="mt-4 text-2xl font-semibold text-gray-900 text-center">Cybersecurity</h3>
-            <p class="mt-2 text-gray-600 text-center">
-              Protect your business with advanced cybersecurity solutions.
+            <h3 class="mt-6 text-lg font-semibold text-center group-hover:text-orange-500 transition duration-300">
+              {{ service.title }}
+            </h3>
+            <p class="mt-4 text-center text-gray-600 text-sm">
+              {{ service.description }}
             </p>
           </div>
         </div>
@@ -86,20 +39,71 @@
     </div>
 
     <!-- Call-to-Action Section -->
-    <div class="bg-gradient-to-r from-blue-400 to-blue-500 text-white py-16 px-6 lg:px-12">
+    <div class="bg-gradient-to-br from-orange-500 to-gray-900 text-white py-16 px-6 lg:px-12">
       <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-3xl font-bold">
-          Ready to take your business to the next level?
+          Ready to elevate your business?
         </h2>
         <p class="mt-4 text-lg">
-          Contact us today to learn more about how we can help.
+          Get in touch with us today to learn more.
         </p>
         <button
-          class="mt-6 px-6 py-3 bg-white text-blue-500 font-semibold rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-300"
+          class="mt-6 px-8 py-3 bg-white text-orange-500 font-semibold rounded-lg shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
         >
-          Get in Touch
+          Contact Us
         </button>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      services: [
+        {
+          title: "Business Consulting",
+          description:
+            "Expert advice to help you navigate challenges and seize opportunities.",
+          icon: "pi pi-chart-line",
+        },
+        {
+          title: "Custom Solutions",
+          description:
+            "Tailored strategies and tools designed for your unique business needs.",
+          icon: "pi pi-cog",
+        },
+        {
+          title: "Web Development",
+          description:
+            "Cutting-edge web design and development to boost your online presence.",
+          icon: "pi pi-desktop",
+        },
+        {
+          title: "Cloud Solutions",
+          description:
+            "Scalable and secure cloud services to meet your evolving demands.",
+          icon: "pi pi-cloud",
+        },
+        {
+          title: "Team Training",
+          description:
+            "Empower your team with the skills and knowledge to succeed.",
+          icon: "pi pi-users",
+        },
+        {
+          title: "Cybersecurity",
+          description:
+            "Protect your business with advanced cybersecurity solutions.",
+          icon: "pi pi-lock",
+        },
+      ],
+    };
+  },
+};
+</script>
+
+<style scoped>
+/* Add custom styling if needed */
+</style>

@@ -7,15 +7,19 @@
           <h2 class="text-3xl font-bold text-gray-900">
             Our Story
           </h2>
-          <p class="mt-4 text-gray-600 leading-relaxed">
-            We started with a passion for helping people connect, learn, and grow. 
-            Over the years, we’ve built a platform that empowers individuals and organizations 
-            to achieve their goals seamlessly. Our team is dedicated to innovation, excellence, 
-            and customer satisfaction.
+          <p class="mt-4 text-gray-600 leading-relaxed text-sm">
+            T30 Energies Limited is a forward-thinking energy company committed to pioneering solutions 
+            for the domestic and industrial use of natural gas in Nigeria. With a focus on gas domestication, 
+            optimization, and the promotion of clean energy alternatives, T30 Energies aims to revolutionize 
+            the way energy is consumed across the country, providing clean, efficient, and sustainable 
+            energy solutions to homes, businesses, and the transportation sector.
           </p>
-          <p class="mt-6 text-gray-600 leading-relaxed">
-            Our mission is to redefine the way communities interact and collaborate. 
-            Join us on this journey of creating impactful experiences, one connection at a time.
+          <p class="mt-6 text-gray-600 leading-relaxed text-sm">      
+            Leveraging Nigeria’s vast natural gas reserves, T30 Energies is dedicated to the full utilization 
+            of this resource to meet the growing demand for affordable, eco-friendly energy solutions. 
+            With an innovative approach to gas capture, liquefaction, compression, and distribution, 
+            T30 Energies is positioning itself as a leader in the energy sector, focusing on both 
+            environmental sustainability and economic growth.
           </p>
         </div>
         <div>
@@ -41,9 +45,10 @@
             >
               <i class="pi pi-users text-3xl"></i>
             </div>
-            <h4 class="text-lg font-bold mt-4">Collaboration</h4>
+            <h4 class="text-lg font-bold mt-4">Sustainability</h4>
             <p class="mt-2 text-gray-600">
-              We believe in the power of teamwork to achieve the extraordinary.
+              Promoting environmentally friendly practices and supporting the long-term health of
+              the planet by reducing carbon emissions and optimizing the use of natural resources.
             </p>
           </div>
           <div class="text-center">
@@ -54,7 +59,8 @@
             </div>
             <h4 class="text-lg font-bold mt-4">Innovation</h4>
             <p class="mt-2 text-gray-600">
-              We embrace change and continuously seek ways to improve and innovate.
+              Driving technological advancement to deliver energy solutions that are more efficient, 
+              cleaner, and sustainable for every home and business.
             </p>
           </div>
           <div class="text-center">
@@ -63,9 +69,10 @@
             >
               <i class="pi pi-shield text-3xl"></i>
             </div>
-            <h4 class="text-lg font-bold mt-4">Integrity</h4>
+            <h4 class="text-lg font-bold mt-4">Accessibility</h4>
             <p class="mt-2 text-gray-600">
-              Honesty and transparency are the cornerstones of our company culture.
+              Ensuring that clean energy is accessible to all, from individual households to large industrial clients, 
+              enabling economic growth and improved quality of life for every Nigerian.
             </p>
           </div>
         </div>

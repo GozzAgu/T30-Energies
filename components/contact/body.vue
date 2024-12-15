@@ -1,7 +1,7 @@
 <template>
   <section class="relative bg-gradient-to-b from-white to-gray-100 text-gray-800 py-16 px-6 md:px-12 lg:px-24">
     <div class="mt-12 flex flex-col lg:flex-row gap-10 items-start justify-between">
-      <div class="lg:w-7/12 bg-white rounded-xl shadow-sm p-8 lg:p-12">
+      <div class="lg:w-7/12 rounded-xl shadow-sm px-8 lg:px-12">
         <form @submit.prevent="handleSubmit">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="relative">
@@ -40,7 +40,7 @@
           </div>
           <button
             type="submit"
-            class="mt-6 w-full py-3 text-lg font-semibold text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition-transform transform hover:scale-105"
+            class="mt-6 w-full py-3 text-lg font-semibold text-white bg-orange-400 rounded-lg hover:bg-orange-500 transition-transform transform hover:scale-105"
           >
             Send Message
           </button>

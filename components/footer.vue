@@ -8,10 +8,9 @@
           alt="Oil and Gas Company Logo"
           class="h-auto w-32 object-contain"
         />
-        <p class="text-sm text-gray-400">
+        <p class="text-xs text-gray-400">
           T30 Energies is dedicated to providing sustainable energy solutions to our clients worldwide.
         </p>
-        <p class="text-xs text-gray-500">&copy; 2024 T30 Energies. All rights reserved.</p>
       </div>
 
       <!-- Quick Links -->
@@ -53,6 +52,7 @@
         <a href="#" class="text-orange-400 mx-2 hover:underline">Twitter</a> |
         <a href="#" class="text-orange-400 mx-2 hover:underline">LinkedIn</a>
       </p>
+      <p class="text-xs text-gray-500 mt-2">&copy; 2024 T30 Energies. All rights reserved.</p>
     </div>
   </footer>
 </template>
