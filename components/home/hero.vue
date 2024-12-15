@@ -1,21 +1,17 @@
 <template>
   <section class="bg-gray-900 text-white relative min-h-screen flex items-center justify-center">
-    <!-- Background Image -->
     <div
       class="absolute inset-0 bg-cover bg-center opacity-75"
       style="background-image: url('/hero.webp');"
     ></div>
 
-    <!-- Overlay -->
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 
-    <!-- Content with Appear Transition -->
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center lg:text-left">
       <transition name="fade-slide" appear>
         <div
           class="flex flex-col lg:flex-row items-center lg:items-start space-y-8 lg:space-y-0 lg:space-x-12"
         >
-          <!-- Text Section -->
           <div class="lg:w-1/2 space-y-6">
             <h1 class="text-4xl lg:text-6xl font-bold leading-tight">
               Reliable Energy for a <span class="text-orange-400">Sustainable Future</span>

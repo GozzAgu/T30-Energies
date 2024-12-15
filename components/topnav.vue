@@ -19,16 +19,40 @@
 
     <ul class="hidden md:flex space-x-6 text-sm">
       <li>
-        <a href="#home" class="hover:text-orange-400 transition duration-300">Home</a>
+        <a
+          href="#home"
+          :class="activeSection === 'home' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
+          @click="setActiveSection('home')"
+        >
+          Home
+        </a>
       </li>
       <li>
-        <a href="#about" class="hover:text-orange-400 transition duration-300">About Us</a>
+        <a
+          href="#about"
+          :class="activeSection === 'about' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
+          @click="setActiveSection('about')"
+        >
+          About Us
+        </a>
       </li>
       <li>
-        <a href="#contact" class="hover:text-orange-400 transition duration-300">Contact Us</a>
+        <a
+          href="#contact"
+          :class="activeSection === 'contact' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
+          @click="setActiveSection('contact')"
+        >
+          Contact Us
+        </a>
       </li>
       <li>
-        <a href="#services" class="hover:text-orange-400 transition duration-300">Our Services</a>
+        <a
+          href="#services"
+          :class="activeSection === 'services' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
+          @click="setActiveSection('services')"
+        >
+          Our Services
+        </a>
       </li>
     </ul>
 
@@ -87,8 +111,8 @@
       <li>
         <a
           href="#home"
-          class="hover:text-orange-400 transition duration-300"
-          @click="closeMobileMenu"
+          :class="activeSection === 'home' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
+          @click="setActiveSection('home'); closeMobileMenu()"
         >
           Home
         </a>
@@ -96,8 +120,8 @@
       <li>
         <a
           href="#about"
-          class="hover:text-orange-400 transition duration-300"
-          @click="closeMobileMenu"
+          :class="activeSection === 'about' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
+          @click="setActiveSection('about'); closeMobileMenu()"
         >
           About Us
         </a>
@@ -105,8 +129,8 @@
       <li>
         <a
           href="#contact"
-          class="hover:text-orange-400 transition duration-300"
-          @click="closeMobileMenu"
+          :class="activeSection === 'contact' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
+          @click="setActiveSection('contact'); closeMobileMenu()"
         >
           Contact Us
         </a>
@@ -114,8 +138,8 @@
       <li>
         <a
           href="#services"
-          class="hover:text-orange-400 transition duration-300"
-          @click="closeMobileMenu"
+          :class="activeSection === 'services' ? 'text-orange-400 font-bold' : 'hover:text-orange-400 transition duration-300'"
+          @click="setActiveSection('services'); closeMobileMenu()"
         >
           Our Services
         </a>
@@ -125,8 +149,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
+const activeSection = ref('home');
 const mobileMenuOpen = ref(false);
 
 const toggleMobileMenu = () => {
@@ -136,14 +159,19 @@ const toggleMobileMenu = () => {
 const closeMobileMenu = () => {
   mobileMenuOpen.value = false;
 };
+
+const setActiveSection = (section: string) => {
+  activeSection.value = section;
+};
 </script>
 
 <style scoped>
-.transition-transform {
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+a {
+  transition: color 0.3s ease-in-out;
 }
 
-input::placeholder {
-  font-size: 0.8rem;
+a.font-bold {
+  color: #ffa500;
+  font-weight: bold;
 }
 </style>
