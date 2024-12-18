@@ -56,7 +56,7 @@
           </div>
           <div>
             <h4 class="font-bold">Office Address</h4>
-            <p class="text-gray-600 text-sm">123 Modern Lane, Bright City, BC 56789</p>
+            <p class="text-gray-600 text-sm">Nigeria</p>
           </div>
         </div>
         <div class="flex items-center gap-4">
@@ -67,7 +67,7 @@
           </div>
           <div>
             <h4 class="font-bold">Email Us</h4>
-            <p class="text-gray-600 text-sm">contact@modernenergy.com</p>
+            <p class="text-gray-600 text-sm">info@t30energies.com</p>
           </div>
         </div>
         <div class="flex items-center gap-4">
@@ -78,7 +78,8 @@
           </div>
           <div>
             <h4 class="font-bold">Call Us</h4>
-            <p class="text-gray-600 text-sm">+1 (987) 654-3210</p>
+            <p class="text-gray-600 text-sm">+(234)-916-000-0873</p>
+            <p class="text-gray-600 text-sm">+(234)-809-745-9745</p>
           </div>
         </div>
         <div class="mt-6">

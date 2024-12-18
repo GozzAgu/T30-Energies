@@ -3,7 +3,6 @@
     <div class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-6 md:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <!-- Business Growth Section -->
           <div>
             <h2 class="text-3xl font-bold text-gray-800">
               Drive Business Growth
@@ -27,7 +26,6 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mt-16">
-          <!-- Cutting-Edge Solutions Section -->
           <div class="order-last lg:order-first">
             <img
               src="/public/IMG-20241214-WA0001.jpg"
@@ -51,7 +49,6 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mt-16">
-          <!-- Business Growth Section -->
           <div>
             <h2 class="text-3xl font-bold text-gray-800">
               Drive Business Growth
@@ -76,7 +73,6 @@
       </div>
     </div>
 
-    <!-- Call-to-Action Section -->
     <div class="bg-gradient-to-br from-orange-500 to-gray-900 text-white py-16 px-6 lg:px-12">
       <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-3xl font-bold">

@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white py-16 text-gray-900">
+  <section class="bg-white py-32 text-gray-900">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="text-center mb-12 fade-in" ref="animatedSection">
         <h2 class="text-3xl lg:text-4xl font-bold">
