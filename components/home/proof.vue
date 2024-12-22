@@ -4,67 +4,30 @@
       <!-- Section Title -->
       <div class="text-center mb-12">
         <h2 class="text-3xl lg:text-4xl font-bold">
-          What Our <span class="text-orange-400">Clients Say</span>
+          Our <span class="text-orange-400">Vision and Mission</span>
         </h2>
         <p class="text-gray-400 mt-4 text-lg">
-          Hear from the businesses and individuals who trust T30 Energies for their energy needs.
+          Leading the energy transition while prioritizing sustainability and innovation.
         </p>
       </div>
 
-      <!-- Testimonials Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Testimonial 1 -->
-        <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
-          <div class="flex items-center mb-6">
-            <!-- <img
-              src=""
-              alt="Client Photo"
-              class="h-12 w-12 rounded-full border-2 border-orange-400"
-            /> -->
-            <div class="">
-              <h3 class="text-lg font-bold">Jane Smith</h3>
-              <p class="text-orange-400 text-sm">CEO, Green Future Co.</p>
-            </div>
-          </div>
-          <p class="text-gray-300 text-xs">
-            "T30 Energies has been instrumental in transforming our energy strategy. Their commitment
-            to sustainability is unmatched!"
+      <!-- Vision and Mission Content -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Vision Section -->
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg" data-gsap="content">
+          <h3 class="text-xl font-bold mb-4">Our Vision</h3>
+          <p class="text-gray-300 text-sm">
+            To become a global leader in delivering sustainable and innovative energy solutions that
+            empower communities and businesses for a brighter future.
           </p>
         </div>
 
-        <!-- Testimonial 2 -->
-        <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
-          <div class="flex items-center mb-6">
-            <!-- <img
-              src=""
-              alt="Client Photo"
-              class="h-12 w-12 rounded-full border-2 border-orange-400"
-            /> -->
-            <div class="">
-              <h3 class="text-lg font-bold">Michael Johnson</h3>
-              <p class="text-orange-400 text-sm">Founder, SolarWave Inc.</p>
-            </div>
-          </div>
-          <p class="text-gray-300 text-xs">
-            "Their innovative solutions have allowed us to optimize our operations and reduce costs significantly."
-          </p>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
-          <div class="flex items-center mb-6">
-            <!-- <img
-              src=""
-              alt="Client Photo"
-              class="h-12 w-12 rounded-full border-2 border-orange-400"
-            /> -->
-            <div class="">
-              <h3 class="text-lg font-bold">Emily Davis</h3>
-              <p class="text-orange-400 text-sm">Manager, EcoFuel Ltd.</p>
-            </div>
-          </div>
-          <p class="text-gray-300 text-xs">
-            "We’re grateful for their exceptional service and personalized support. T30 Energies truly cares about their clients."
+        <!-- Mission Section -->
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg" data-gsap="content">
+          <h3 class="text-xl font-bold mb-4">Our Mission</h3>
+          <p class="text-gray-300 text-sm">
+            We are dedicated to driving positive change by investing in clean energy, fostering
+            innovation, and creating value for our stakeholders while protecting the planet.
           </p>
         </div>
       </div>
@@ -72,8 +35,32 @@
   </section>
 </template>
 
+<script>
+import { onMounted } from "vue";
+import gsap from "gsap";
+
+export default {
+  name: "VisionMissionSection",
+  setup() {
+    onMounted(() => {
+      gsap.from("[data-gsap='content']", {
+        opacity: 0,
+        x: -50,
+        stagger: 0.3,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "[data-gsap='content']",
+          start: "top 80%",
+        },
+      });
+    });
+  },
+};
+</script>
+
 <style scoped>
-/* Optional: Add hover effects to enhance user interaction */
+/* Optional: Add hover effects for interactivity */
 .bg-gray-800:hover {
   transform: translateY(-5px);
   transition: all 0.3s ease-in-out;

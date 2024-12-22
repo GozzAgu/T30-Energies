@@ -1,7 +1,8 @@
 <template>
   <section class="bg-white py-32 text-gray-900">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="text-center mb-12 fade-in" ref="animatedSection">
+      <!-- Section Heading -->
+      <div class="text-center mb-12" ref="headingSection">
         <h2 class="text-3xl lg:text-4xl font-bold">
           Why Choose <span class="text-orange-400">T30 Energies?</span>
         </h2>
@@ -10,11 +11,13 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Features Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref="featuresSection">
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="flex items-start space-x-4 fade-in"
+          class="flex items-start space-x-4"
+          :ref="el => (featureRefs[index] = el)"
         >
           <div class="flex items-center justify-center bg-orange-100 p-4 rounded-full h-16 w-16">
             <Icon :name="feature.icon" class="text-orange-400 text-3xl" />
@@ -32,6 +35,45 @@
 </template>
 
 <script setup>
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+const headingSection = ref(null);
+const featuresSection = ref(null);
+const featureRefs = ref([]); // To store references to feature cards
+
+onMounted(() => {
+  // Animate the heading section
+  gsap.from(headingSection.value, {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: headingSection.value,
+      start: 'top 80%', // Trigger animation when section is 80% visible
+    },
+  });
+
+  // Animate the feature cards
+  featureRefs.value.forEach((el, index) => {
+    gsap.from(el, {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      delay: index * 0.2, // Stagger animations for cards
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: featuresSection.value,
+        start: 'top 85%', // Trigger animation when section is 85% visible
+      },
+    });
+  });
+});
+
 const features = [
   {
     icon: 'mdi:leaf',

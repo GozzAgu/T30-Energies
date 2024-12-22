@@ -1,7 +1,7 @@
 <template>
-  <section class="relative bg-gradient-to-b from-white to-gray-100 text-gray-800 py-16 px-6 md:px-12 lg:px-24">
+  <section class="relative bg-gradient-to-b from-white to-gray-100 text-gray-800 py-16 px-6 md:px-12 lg:px-24" ref="contactSection">
     <div class="mt-12 flex flex-col lg:flex-row gap-10 items-start justify-between">
-      <div class="lg:w-7/12 px-8 lg:px-12">
+      <div class="lg:w-7/12 px-8 lg:px-12" ref="formContainer">
         <form @submit.prevent="handleSubmit">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="relative">
@@ -41,13 +41,15 @@
           <button
             type="submit"
             class="mt-6 w-full py-3 text-lg font-semibold text-white bg-orange-400 rounded-lg hover:bg-orange-500 transition-transform transform hover:scale-105"
+            ref="submitButton"
           >
             Send Message
           </button>
         </form>
       </div>
 
-      <div class="lg:w-5/12 space-y-8">
+      <div class="lg:w-5/12 space-y-8" ref="contactDetails">
+        <!-- Contact Info Sections -->
         <div class="flex items-center gap-4">
           <div
             class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-500"
@@ -102,7 +104,8 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive, onMounted, ref } from "vue";
+import gsap from "gsap";
 
 const form = reactive({
   name: "",
@@ -110,12 +113,54 @@ const form = reactive({
   message: "",
 });
 
+const contactSection = ref(null);
+const formContainer = ref(null);
+const contactDetails = ref(null);
+const submitButton = ref(null);
+
 const handleSubmit = () => {
   alert(`Thank you, ${form.name}! Your message has been sent.`);
   form.name = "";
   form.email = "";
   form.message = "";
 };
+
+onMounted(() => {
+  // Animate the contact section when the page loads
+  gsap.from(contactSection.value, {
+    opacity: 0,
+    duration: 1.5,
+    y: 50,
+    ease: "power4.out",
+  });
+
+  // Animate the form container
+  gsap.from(formContainer.value, {
+    opacity: 0,
+    duration: 1.5,
+    delay: 0.5,
+    x: -100,
+    ease: "power4.out",
+  });
+
+  // Animate the contact details
+  gsap.from(contactDetails.value, {
+    opacity: 0,
+    duration: 1.5,
+    delay: 0.7,
+    x: 100,
+    ease: "power4.out",
+  });
+
+  // Animate the submit button
+  gsap.from(submitButton.value, {
+    opacity: 0,
+    duration: 1,
+    delay: 1,
+    scale: 0.8,
+    ease: "power4.out",
+  });
+});
 </script>
 
 <style scoped>

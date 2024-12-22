@@ -2,7 +2,7 @@
   <div>
     <Topnav />
     <ServicesHero />
-    <HomeOfferings />
+    <ServicesOfferings />
     <ServicesBody />
     <Footer />
   </div>
