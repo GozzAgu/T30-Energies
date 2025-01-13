@@ -17,10 +17,38 @@
       <div class="flex flex-col space-y-4">
         <h3 class="font-semibold text-orange-400">Quick Links</h3>
         <ul class="space-y-2 text-xs">
-          <li><a href="#home" class="hover:text-orange-400 transition duration-300">Home</a></li>
-          <li><a href="#about" class="hover:text-orange-400 transition duration-300">About Us</a></li>
-          <li><a href="#services" class="hover:text-orange-400 transition duration-300">Our Services</a></li>
-          <li><a href="#contact" class="hover:text-orange-400 transition duration-300">Contact Us</a></li>
+          <li>
+            <NuxtLink
+              to="/"
+              class="hover:text-orange-400 transition duration-300"
+            >
+              Home
+            </NuxtLink>  
+          </li>
+          <li>
+            <NuxtLink
+              to="/about"
+              class="hover:text-orange-400 transition duration-300"
+            >
+              About Us
+            </NuxtLink>  
+          </li>
+          <li>
+            <NuxtLink
+              to="/services"
+              class="hover:text-orange-400 transition duration-300"
+            >
+              Our Services
+            </NuxtLink>  
+          </li>
+          <li>
+            <NuxtLink
+              to="/contact"
+              class="hover:text-orange-400 transition duration-300"
+            >
+              Contact Us
+            </NuxtLink>  
+          </li>
         </ul>
       </div>
 
@@ -31,7 +59,7 @@
         <ul class="space-y-2 text-xs">
           <li class="flex items-center space-x-2">
             <i class="pi pi-phone text-orange-400"></i>
-            <span>+1 (555) 123-4567</span>
+            <span>+2348097459745 | +2349160000873</span>
           </li>
           <li class="flex items-center space-x-2">
             <i class="pi pi-envelope text-orange-400"></i>
@@ -39,7 +67,7 @@
           </li>
           <li class="flex items-center space-x-2">
             <i class="pi pi-map-marker text-orange-400"></i>
-            <span>123 Energy Blvd, Houston, TX</span>
+            <span>88 Evo road, G.R.A, Port-Harcourt, Rivers State</span>
           </li>
         </ul>
       </div>
