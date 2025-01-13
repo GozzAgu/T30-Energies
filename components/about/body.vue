@@ -91,8 +91,8 @@
               alt="Team Member"
               class="w-32 h-32 mx-auto rounded-full shadow-lg"
             />
-            <h4 class="mt-4 font-bold text-lg">Jane Doe</h4>
-            <p class="text-gray-600 text-sm">CEO & Founder</p>
+            <h4 class="mt-4 font-bold text-lg">Lanre Oluseye</h4>
+            <p class="text-gray-600 text-sm">MD/CEO</p>
           </div>
           <div class="text-center" ref="team2">
             <img
@@ -100,8 +100,8 @@
               alt="Team Member"
               class="w-32 h-32 mx-auto rounded-full shadow-lg"
             />
-            <h4 class="mt-4 font-bold text-lg">John Smith</h4>
-            <p class="text-gray-600 text-sm">Head of Product</p>
+            <h4 class="mt-4 font-bold text-lg">Chinwe Wilcox</h4>
+            <p class="text-gray-600 text-sm">ACCOUNTANT</p>
           </div>
           <div class="text-center" ref="team3">
             <img
@@ -109,8 +109,35 @@
               alt="Team Member"
               class="w-32 h-32 mx-auto rounded-full shadow-lg"
             />
-            <h4 class="mt-4 font-bold text-lg">Emily Davis</h4>
-            <p class="text-gray-600 text-sm">Lead Designer</p>
+            <h4 class="mt-4 font-bold text-lg">Oluwatobi Iyanda</h4>
+            <p class="text-gray-600 text-sm">BUSINESS DEVELOPMENT MANAGER</p>
+          </div>
+          <div class="text-center" ref="team3">
+            <img
+              src="https://via.placeholder.com/200"
+              alt="Team Member"
+              class="w-32 h-32 mx-auto rounded-full shadow-lg"
+            />
+            <h4 class="mt-4 font-bold text-lg">Promise Udoh</h4>
+            <p class="text-gray-600 text-sm">HEAD OF OPERATIONS</p>
+          </div>
+          <div class="text-center" ref="team3">
+            <img
+              src="https://via.placeholder.com/200"
+              alt="Team Member"
+              class="w-32 h-32 mx-auto rounded-full shadow-lg"
+            />
+            <h4 class="mt-4 font-bold text-lg">Otu Jacobs</h4>
+            <p class="text-gray-600 text-sm">ENGINEERING/FABRICATIONS</p>
+          </div>
+          <div class="text-center" ref="team3">
+            <img
+              src="https://via.placeholder.com/200"
+              alt="Team Member"
+              class="w-32 h-32 mx-auto rounded-full shadow-lg"
+            />
+            <h4 class="mt-4 font-bold text-lg">Efetobore Umiaghwa</h4>
+            <p class="text-gray-600 text-sm">GENERAL MANAGER</p>
           </div>
         </div>
       </div>

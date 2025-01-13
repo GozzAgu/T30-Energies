@@ -6,25 +6,36 @@
         <span class="font-black text-5xl">T</span>30 Energies Ltd offers a variety of services that span construction, engineering, and gas products. Our expert team ensures every project is handled with precision, care, and in line with the highest industry standards. Explore each of our services below to learn more about how we can help your business thrive.
       </p>
 
-      <div v-for="(service, index) in services" :key="index" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mt-16 py-8">
-        <div :class="index % 2 === 0 ? '' : 'lg:order-last'" class="flex flex-col justify-between h-full">
-          <div class="text-gray-700 space-y-6">
-            <h2 class="text-2xl font-semibold text-gray-800">{{ service.title }}</h2>
-            <p>{{ service.description }}</p>
-          </div>
+      <div v-for="(service, index) in services" :key="index" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-16 py-8">
+        <!-- Text Content -->
+        <div :class="index % 2 === 0 ? '' : 'lg:order-last'" class="flex flex-col justify-center h-full space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800">{{ service.title }}</h2>
+          <p class="text-gray-600">{{ service.description }}</p>
         </div>
         
-        <img  ref="imageContainer" :src="service.image" :alt="service.title" class="w-full h-full object-cover rounded-md service-image" />
+        <!-- Image -->
+        <img
+          ref="imageContainer"
+          :src="service.image"
+          :alt="service.title"
+          class="w-full h-auto max-h-80 object-cover rounded-md shadow-md"
+        />
       </div>
     </div>
 
+    <!-- Image Gallery -->
     <div class="bg-gray-100 py-16 mt-24">
       <div class="max-w-7xl mx-auto px-6 md:px-12 text-center">
         <h2 class="text-4xl font-extrabold text-gray-800">Image Gallery</h2>
         <p class="mt-4 text-lg text-gray-600">Explore some of the incredible projects and services we've delivered to our clients.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-12">
-          <div v-for="(service, index) in services" :key="index" class="group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105" ref="imageGrid">
-            <img :src="service.image" :alt="service.title" class="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-300" />
+          <div
+            v-for="(service, index) in services"
+            :key="index"
+            class="group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105"
+            ref="imageGrid"
+          >
+            <img loading="lazy" :src="service.image" :alt="service.title" class="w-full h-full object-cover group-hover:opacity-80 transition-opacity duration-300" />
             <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <p class="text-2xl font-semibold">{{ service.title }}</p>
             </div>
@@ -94,26 +105,6 @@ const services = [
     image: "/projectm.webp"
   },
 ];
-
-onMounted(() => {
-  // Animation for service images
-  gsap.from(".service-image", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.3,
-    ease: "power4.out"
-  });
-
-  // Animation for grid images
-  gsap.from(".group", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2,
-    ease: "power4.out"
-  });
-});
 </script>
 
 <style scoped>
