@@ -19,16 +19,18 @@
             while building a greener tomorrow.
           </p>
           <div class="flex space-x-4">
-            <button
+            <NuxtLink
+              to="/about"
               class="px-6 py-3 text-white bg-orange-500 hover:bg-orange-600 active:bg-orange-700 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 focus:outline-none focus:ring focus:ring-orange-400"
             >
               Learn More
-            </button>
-            <button
+            </NuxtLink>
+            <NuxtLink
+              to="/contact"
               class="px-6 py-3 text-gray-200 bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 focus:outline-none focus:ring focus:ring-gray-500"
             >
               Contact Us
-            </button>
+            </NuxtLink>
           </div>
         </div>
       </div>

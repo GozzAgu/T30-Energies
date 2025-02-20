@@ -80,7 +80,7 @@
         <a href="#" class="text-orange-400 mx-2 hover:underline">Twitter</a> |
         <a href="#" class="text-orange-400 mx-2 hover:underline">LinkedIn</a>
       </p>
-      <p class="text-xs text-gray-500 mt-2">&copy; 2024 T30 Energies. All rights reserved.</p>
+      <p class="text-xs text-gray-500 mt-2">&copy; 2025 T30 Energies. All rights reserved.</p>
     </div>
   </footer>
 </template>

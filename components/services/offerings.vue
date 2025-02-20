@@ -49,9 +49,9 @@
       <div class="max-w-6xl mx-auto text-center space-y-6">
         <h2 class="text-5xl font-extrabold leading-tight">Ready to Elevate Your Business?</h2>
         <p class="mt-4 text-xl">Let us help you unlock new growth opportunities. Get in touch today to learn how we can work together and take your business to the next level.</p>
-        <button class="mt-6 px-8 py-4 bg-white text-orange-500 font-semibold rounded-lg shadow-2xl transform transition-all duration-300 hover:bg-gray-100 hover:shadow-2xl hover:translate-y-2">
+        <NuxtLink to="/contact" class="mt-6 px-8 py-4 bg-white text-orange-500 font-semibold rounded-lg shadow-2xl transform transition-all duration-300 hover:bg-gray-100 hover:shadow-2xl hover:translate-y-2">
           Contact Us
-        </button>
+        </NuxtLink>
       </div>
     </div>
   </section>
