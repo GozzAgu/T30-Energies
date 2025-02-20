@@ -62,16 +62,21 @@
           </div>
         </div>
         <div class="flex items-center gap-4">
-          <div
-            class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-500"
-          >
-            <Icon name="material-symbols:attach-email" class="text-orange-400 text-2xl" />
+        <div
+          class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-500"
+        >
+          <Icon name="material-symbols:attach-email" class="text-orange-400 text-2xl" />
           </div>
           <div>
             <h4 class="font-bold">Email Us</h4>
-            <p class="text-gray-600 text-sm">info@t30energies.com</p>
+            <p class="text-gray-600 text-sm">
+              <a href="mailto:info@t30energies.com" class="hover:underline">
+                info@t30energies.com
+              </a>
+            </p>
           </div>
         </div>
+
         <div class="flex items-center gap-4">
           <div
             class="flex-shrink-0 w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-500"
@@ -80,10 +85,19 @@
           </div>
           <div>
             <h4 class="font-bold">Call Us</h4>
-            <p class="text-gray-600 text-sm">+(234)-916-000-0873</p>
-            <p class="text-gray-600 text-sm">+(234)-809-745-9745</p>
+            <p class="text-gray-600 text-sm">
+              <a href="tel:+2349160000873" class="hover:underline">
+                +(234)-916-000-0873
+              </a>
+            </p>
+            <p class="text-gray-600 text-sm">
+              <a href="tel:+2348097459745" class="hover:underline">
+                +(234)-809-745-9745
+              </a>
+            </p>
           </div>
         </div>
+
         <div class="mt-6">
           <h4 class="font-bold text-lg">Follow Us</h4>
           <div class="flex items-center gap-6 mt-4">
