@@ -13,7 +13,7 @@ useHead({
     { name: "author", content: "T30 Energies" },
     { property: "og:title", content: "T30 Energies - Your Energy Solution" },
     { property: "og:description", content: "T30 Energies provides sustainable and efficient energy solutions for businesses and homes." },
-    { property: "og:image", content: "/public/T30_Energies_Icon_only[1].png" },
+    { property: "og:image", content: "https://t30energies.com" },
     { property: "og:url", content: "https://www.t30energies.com" }
   ]
 });

@@ -185,5 +185,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Add any additional custom styles here */
+img {
+  width: 8rem; /* Equivalent to w-32 */
+  height: 8rem; /* Equivalent to h-32 */
+  object-fit: cover; /* Ensures images don’t stretch */
+}
 </style>
