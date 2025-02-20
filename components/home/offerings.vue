@@ -47,6 +47,9 @@
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+const redirectToPage = (service) => {
+  router.push(`/services#${service.title.toLowerCase().replace(/\s+/g, '-')}`);
+};
 
 const services = [
   {
@@ -92,11 +95,6 @@ const services = [
     link: "/services/project-management"
   },
 ];
-
-// Redirect to the respective service page
-const redirectToPage = (service) => {
-  router.push(service.link);
-};
 </script>
 
 <style>

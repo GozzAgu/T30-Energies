@@ -58,7 +58,7 @@
           </div>
           <div>
             <h4 class="font-bold">Office Address</h4>
-            <p class="text-gray-600 text-sm">Nigeria</p>
+            <p class="text-gray-600 text-sm">88 Evo road, GRA, Port Harcourt, Rivers State.</p>
           </div>
         </div>
         <div class="flex items-center gap-4">

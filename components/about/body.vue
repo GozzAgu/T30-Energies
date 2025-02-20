@@ -84,10 +84,10 @@
         <p class="mt-4 text-gray-600">
           Our team of passionate individuals is here to bring our vision to life.
         </p>
-        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-12">
           <div class="text-center" ref="team1">
             <img
-              src="https://via.placeholder.com/200"
+              src="/public/images/PHOTO-2025-01-10-15-37-05.jpg"
               alt="Team Member"
               class="w-32 h-32 mx-auto rounded-full shadow-lg"
             />
@@ -96,7 +96,7 @@
           </div>
           <div class="text-center" ref="team2">
             <img
-              src="https://via.placeholder.com/200"
+              src="/public/images/DSC_9951.jpg"
               alt="Team Member"
               class="w-32 h-32 mx-auto rounded-full shadow-lg"
             />
@@ -105,7 +105,7 @@
           </div>
           <div class="text-center" ref="team3">
             <img
-              src="https://via.placeholder.com/200"
+              src="/public/images/PHOTO-2025-01-10-15-40-23.jpg"
               alt="Team Member"
               class="w-32 h-32 mx-auto rounded-full shadow-lg"
             />
@@ -114,7 +114,7 @@
           </div>
           <div class="text-center" ref="team3">
             <img
-              src="https://via.placeholder.com/200"
+              src="/public/images/PHOTO-2025-01-10-15-40-42.jpg"
               alt="Team Member"
               class="w-32 h-32 mx-auto rounded-full shadow-lg"
             />
@@ -123,7 +123,7 @@
           </div>
           <div class="text-center" ref="team3">
             <img
-              src="https://via.placeholder.com/200"
+              src="/public//images/PHOTO-2025-01-10-15-40-56.jpg"
               alt="Team Member"
               class="w-32 h-32 mx-auto rounded-full shadow-lg"
             />
@@ -132,7 +132,7 @@
           </div>
           <div class="text-center" ref="team3">
             <img
-              src="https://via.placeholder.com/200"
+              src="/public/images/_DSC0379.jpg"
               alt="Team Member"
               class="w-32 h-32 mx-auto rounded-full shadow-lg"
             />

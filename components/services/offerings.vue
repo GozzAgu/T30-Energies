@@ -6,7 +6,7 @@
         <span class="font-black text-5xl">T</span>30 Energies Ltd offers a variety of services that span construction, engineering, and gas products. Our expert team ensures every project is handled with precision, care, and in line with the highest industry standards. Explore each of our services below to learn more about how we can help your business thrive.
       </p>
 
-      <div v-for="(service, index) in services" :key="index" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-16 py-8">
+      <div v-for="(service, index) in services" :key="index" :id="service.title.toLowerCase().replace(/\s+/g, '-')" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-16 py-8">
         <!-- Text Content -->
         <div :class="index % 2 === 0 ? '' : 'lg:order-last'" class="flex flex-col justify-center h-full space-y-4">
           <h2 class="text-2xl font-semibold text-gray-800">{{ service.title }}</h2>
@@ -58,8 +58,10 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
-import gsap from "gsap";
+import { onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 
 const services = [
   {
@@ -105,6 +107,15 @@ const services = [
     image: "/projectm.webp"
   },
 ];
+
+onMounted(() => {
+  if (route.hash) {
+    const element = document.querySelector(route.hash);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
 </script>
 
 <style scoped>
