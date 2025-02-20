@@ -89,7 +89,7 @@
             <img
               src="/public/images/PHOTO-2025-01-10-15-37-05.jpg"
               alt="Team Member"
-              class="w-32 h-32 mx-auto rounded-full shadow-lg"
+              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
             />
             <h4 class="mt-4 font-bold text-lg">Lanre Oluseye</h4>
             <p class="text-gray-600 text-sm">MD/CEO</p>
@@ -98,7 +98,7 @@
             <img
               src="/public/images/DSC_9951.jpg"
               alt="Team Member"
-              class="w-32 h-32 mx-auto rounded-full shadow-lg"
+              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
             />
             <h4 class="mt-4 font-bold text-lg">Chinwe Wilcox</h4>
             <p class="text-gray-600 text-sm">ACCOUNTANT</p>
@@ -107,7 +107,7 @@
             <img
               src="/public/images/PHOTO-2025-01-10-15-40-23.jpg"
               alt="Team Member"
-              class="w-32 h-32 mx-auto rounded-full shadow-lg"
+              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
             />
             <h4 class="mt-4 font-bold text-lg">Oluwatobi Iyanda</h4>
             <p class="text-gray-600 text-sm">BUSINESS DEVELOPMENT MANAGER</p>
@@ -116,7 +116,7 @@
             <img
               src="/public/images/PHOTO-2025-01-10-15-40-42.jpg"
               alt="Team Member"
-              class="w-32 h-32 mx-auto rounded-full shadow-lg"
+              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
             />
             <h4 class="mt-4 font-bold text-lg">Promise Udoh</h4>
             <p class="text-gray-600 text-sm">HEAD OF OPERATIONS</p>
@@ -125,7 +125,7 @@
             <img
               src="/public//images/PHOTO-2025-01-10-15-40-56.jpg"
               alt="Team Member"
-              class="w-32 h-32 mx-auto rounded-full shadow-lg"
+              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
             />
             <h4 class="mt-4 font-bold text-lg">Otu Jacobs</h4>
             <p class="text-gray-600 text-sm">ENGINEERING/FABRICATIONS</p>
@@ -134,7 +134,7 @@
             <img
               src="/public/images/_DSC0379.jpg"
               alt="Team Member"
-              class="w-32 h-32 mx-auto rounded-full shadow-lg"
+              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
             />
             <h4 class="mt-4 font-bold text-lg">Efetobore Umiaghwa</h4>
             <p class="text-gray-600 text-sm">GENERAL MANAGER</p>
@@ -185,7 +185,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-img {
+.img {
   width: 8rem; /* Equivalent to w-32 */
   height: 8rem; /* Equivalent to h-32 */
   object-fit: cover; /* Ensures images don’t stretch */
