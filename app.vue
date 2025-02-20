@@ -15,6 +15,10 @@ useHead({
     { property: "og:description", content: "T30 Energies provides sustainable and efficient energy solutions for businesses and homes." },
     { property: "og:image", content: "https://t30energies.com" },
     { property: "og:url", content: "https://www.t30energies.com" }
+  ],
+  link: [
+    { rel: "icon", type: "image/png", href: "/T30_Energies_Icon_only[1].png" }, // Adjust the type based on your file format
+    { rel: "icon", type: "image/x-icon", href: "/T30_Energies_Icon_only[1].png" } // Fallback for .ico
   ]
 });
 </script>
