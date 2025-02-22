@@ -17,8 +17,8 @@ useHead({
     { property: "og:url", content: "https://www.t30energies.com" }
   ],
   link: [
-    { rel: "icon", type: "image/png", href: "/T30_Energies_Icon_only[1].png" }, // Adjust the type based on your file format
-    { rel: "icon", type: "image/x-icon", href: "/T30_Energies_Icon_only[1].png" } // Fallback for .ico
+    { rel: "icon", type: "image/png", href: "/T30_Energies_Icon_only[1].png" },
+    { rel: "icon", type: "image/x-icon", href: "/T30_Energies_Icon_only[1].png" }
   ]
 });
 </script>

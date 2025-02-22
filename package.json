@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@nuxt/icon": "^1.10.1",
+    "@nuxtjs/robots": "^5.2.4",
+    "@nuxtjs/sitemap": "^7.2.6",
     "gsap": "^3.12.5",
     "nuxt": "^3.14.1592",
+    "nuxt-sitemap": "^1.0.0",
     "vue": "latest",
     "vue-router": "latest"
   },
