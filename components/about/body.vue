@@ -40,10 +40,17 @@ const teamMembers = ref([
     showBio: false
   },
   {
-    name: 'Chinwe Wilcox',
-    role: 'Accountant',
-    image: '/images/5.png',
-    bio: 'Otu Jacobs holds a Higher National Diploma in Welding and Fabrication Engineering Technology from the Petroleum Training Institute, Effurun, Delta State, and is certified as a Professional Scrum Master (PSM) and Project Management Professional (PMP). With over a decade of experience, including 7 years in the oil and gas industry, he brings knowledge and expertise to every project he undertakes.',
+    name: 'Efetobore Umiaghwa',
+    role: 'General Manager',
+    image: '/images/6.png',
+    bio: 'Oluwatobi Iyanda holds a Bachelor of Agriculture (B.Agric) in Horticulture from the Federal University of Agriculture, Abeokuta. She has extensive experience in business development across various sectors and has been a Business Development Manager in the oil and gas sector for seven years. To enhance her expertise, she has undergone specialized training and obtained certifications in business development, equipping her with advanced skills in market analysis, strategic planning, client relationship management, and project management. ',
+    showBio: false
+  },
+  {
+    name: 'Otu Jacobs',
+    role: 'Engineering/Fabrications',
+    image: '/images/3.png',
+    bio: 'Promise Udoh is a skilled civil engineer with a Higher National Diploma in Civil Engineering and five years of extensive experience in the oil and gas sector. His strong technical expertise and operational oversight skills ensure the successful execution of projects with precision and excellence. Promises dedication and attention to detail make him a vital asset to any team.',
     showBio: false
   },
   {
@@ -61,19 +68,12 @@ const teamMembers = ref([
     showBio: false
   },
   {
-    name: 'Otu Jacobs',
-    role: 'Engineering/Fabrications',
-    image: '/images/3.png',
-    bio: 'Promise Udoh is a skilled civil engineer with a Higher National Diploma in Civil Engineering and five years of extensive experience in the oil and gas sector. His strong technical expertise and operational oversight skills ensure the successful execution of projects with precision and excellence. Promises dedication and attention to detail make him a vital asset to any team.',
+    name: 'Chinwe Wilcox',
+    role: 'Accountant',
+    image: '/images/5.png',
+    bio: 'Otu Jacobs holds a Higher National Diploma in Welding and Fabrication Engineering Technology from the Petroleum Training Institute, Effurun, Delta State, and is certified as a Professional Scrum Master (PSM) and Project Management Professional (PMP). With over a decade of experience, including 7 years in the oil and gas industry, he brings knowledge and expertise to every project he undertakes.',
     showBio: false
   },
-  {
-    name: 'Efetobore Umiaghwa',
-    role: 'General Manager',
-    image: '/images/6.png',
-    bio: 'Oluwatobi Iyanda holds a Bachelor of Agriculture (B.Agric) in Horticulture from the Federal University of Agriculture, Abeokuta. She has extensive experience in business development across various sectors and has been a Business Development Manager in the oil and gas sector for seven years. To enhance her expertise, she has undergone specialized training and obtained certifications in business development, equipping her with advanced skills in market analysis, strategic planning, client relationship management, and project management. ',
-    showBio: false
-  }
 ]);
 
 const toggleBio = (index) => {
