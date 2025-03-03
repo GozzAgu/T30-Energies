@@ -1,144 +1,27 @@
 <template>
   <section class="bg-gray-50 text-gray-800">
     <div class="max-w-6xl mx-auto py-16 px-6 md:px-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12" ref="storySection">
-        <!-- Text Section -->
-        <div>
-          <h2 class="text-3xl font-bold text-gray-900" ref="storyTitle">Our Story</h2>
-          <p class="mt-4 text-gray-600 leading-relaxed text-sm" ref="storyText1">
-            T30 Energies Limited is a forward-thinking energy company committed to pioneering solutions 
-            for the domestic and industrial use of natural gas in Nigeria. With a focus on gas domestication, 
-            optimization, and the promotion of clean energy alternatives, T30 Energies aims to revolutionize 
-            the way energy is consumed across the country, providing clean, efficient, and sustainable 
-            energy solutions to homes, businesses, and the transportation sector.
-          </p>
-          <p class="mt-6 text-gray-600 leading-relaxed text-sm" ref="storyText2">      
-            Leveraging Nigeria’s vast natural gas reserves, T30 Energies is dedicated to the full utilization 
-            of this resource to meet the growing demand for affordable, eco-friendly energy solutions. 
-            With an innovative approach to gas capture, liquefaction, compression, and distribution, 
-            T30 Energies is positioning itself as a leader in the energy sector, focusing on both 
-            environmental sustainability and economic growth.
-          </p>
-        </div>
-        <div>
+      <h2 class="text-3xl font-bold text-gray-900 text-center">Meet the Team</h2>
+      <p class="mt-4 text-gray-600 text-center">
+        Our team of passionate individuals is here to bring our vision to life.
+      </p>
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-12">
+        <div v-for="(member, index) in teamMembers" :key="index" class="text-center relative">
           <img
-            src="/public/IMG-20241214-WA0006.jpg"
-            alt="About us illustration"
-            class="rounded-xl shadow-lg"
-            ref="storyImage"
+            :src="member.image"
+            :alt="member.name"
+            class="img w-32 h-32 mx-auto rounded-full shadow-lg"
           />
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white py-16 px-6 md:px-12">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-gray-900" ref="coreValuesTitle">Our Core Values</h2>
-        <p class="mt-4 text-gray-600" ref="coreValuesText">
-          Our values guide us in every decision we make and every product we deliver.
-        </p>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="text-center" ref="value1">
-            <div
-              class="flex items-center justify-center w-16 h-16 mx-auto bg-orange-100 text-orange-500 rounded-full"
-            >
-              <Icon name="mdi:leaf" class="text-orange-400 text-3xl"/>
+          <h4 class="mt-4 font-bold text-lg">{{ member.name }}</h4>
+          <p class="text-gray-600 text-sm">{{ member.role }}</p>
+          <button @click="toggleBio(index)" class="mt-2 text-orange-500 underline text-sm">
+            {{ member.showBio ? 'Hide Bio' : 'View Bio' }}
+          </button>
+          <transition name="fade">
+            <div v-if="member.showBio" class="absolute top-full left-1/2 transform -translate-x-1/2 w-[200rem] max-w-lg bg-white shadow-lg rounded-lg p-4 z-10">
+              <p class="text-gray-600 text-sm text-start">{{ member.bio }}</p>
             </div>
-            <h4 class="text-lg font-bold mt-4">Sustainability</h4>
-            <p class="mt-2 text-gray-600">
-              Promoting environmentally friendly practices and supporting the long-term health of
-              the planet by reducing carbon emissions and optimizing the use of natural resources.
-            </p>
-          </div>
-          <div class="text-center" ref="value2">
-            <div
-              class="flex items-center justify-center w-16 h-16 mx-auto bg-orange-100 text-orange-500 rounded-full"
-            >
-              <Icon name="heroicons-outline:light-bulb" class="text-orange-400 text-3xl"/>
-            </div>
-            <h4 class="text-lg font-bold mt-4">Innovation</h4>
-            <p class="mt-2 text-gray-600">
-              Driving technological advancement to deliver energy solutions that are more efficient, 
-              cleaner, and sustainable for every home and business.
-            </p>
-          </div>
-          <div class="text-center" ref="value3">
-            <div
-              class="flex items-center justify-center w-16 h-16 mx-auto bg-orange-100 text-orange-500 rounded-full"
-            >
-              <Icon name="material-symbols:accessible-forward" class="text-orange-400 text-3xl"/>
-            </div>
-            <h4 class="text-lg font-bold mt-4">Accessibility</h4>
-            <p class="mt-2 text-gray-600">
-              Ensuring that clean energy is accessible to all, from individual households to large industrial clients, 
-              enabling economic growth and improved quality of life for every Nigerian.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="py-16 px-6 md:px-12 bg-gray-100">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-gray-900">Meet the Team</h2>
-        <p class="mt-4 text-gray-600">
-          Our team of passionate individuals is here to bring our vision to life.
-        </p>
-        <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-12">
-          <div class="text-center" ref="team1">
-            <img
-              src="/public/images/PHOTO-2025-01-10-15-37-05.jpg"
-              alt="Team Member"
-              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
-            />
-            <h4 class="mt-4 font-bold text-lg">Lanre Oluseye</h4>
-            <p class="text-gray-600 text-sm">MD/CEO</p>
-          </div>
-          <div class="text-center" ref="team2">
-            <img
-              src="/public/images/DSC_9951.jpg"
-              alt="Team Member"
-              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
-            />
-            <h4 class="mt-4 font-bold text-lg">Chinwe Wilcox</h4>
-            <p class="text-gray-600 text-sm">ACCOUNTANT</p>
-          </div>
-          <div class="text-center" ref="team3">
-            <img
-              src="/public/images/PHOTO-2025-01-10-15-40-23.jpg"
-              alt="Team Member"
-              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
-            />
-            <h4 class="mt-4 font-bold text-lg">Oluwatobi Iyanda</h4>
-            <p class="text-gray-600 text-sm">BUSINESS DEVELOPMENT MANAGER</p>
-          </div>
-          <div class="text-center" ref="team3">
-            <img
-              src="/public/images/PHOTO-2025-01-10-15-40-42.jpg"
-              alt="Team Member"
-              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
-            />
-            <h4 class="mt-4 font-bold text-lg">Promise Udoh</h4>
-            <p class="text-gray-600 text-sm">HEAD OF OPERATIONS</p>
-          </div>
-          <div class="text-center" ref="team3">
-            <img
-              src="/public//images/PHOTO-2025-01-10-15-40-56.jpg"
-              alt="Team Member"
-              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
-            />
-            <h4 class="mt-4 font-bold text-lg">Otu Jacobs</h4>
-            <p class="text-gray-600 text-sm">ENGINEERING/FABRICATIONS</p>
-          </div>
-          <div class="text-center" ref="team3">
-            <img
-              src="/public/images/_DSC0379.jpg"
-              alt="Team Member"
-              class="img w-32 h-32 mx-auto rounded-full shadow-lg"
-            />
-            <h4 class="mt-4 font-bold text-lg">Efetobore Umiaghwa</h4>
-            <p class="text-gray-600 text-sm">GENERAL MANAGER</p>
-          </div>
+          </transition>
         </div>
       </div>
     </div>
@@ -146,48 +29,69 @@
 </template>
 
 <script setup>
-import gsap from "gsap";
+import { ref } from 'vue';
 
-// GSAP animations
-const storySection = ref(null);
-const storyTitle = ref(null);
-const storyText1 = ref(null);
-const storyText2 = ref(null);
-const storyImage = ref(null);
-const coreValuesTitle = ref(null);
-const coreValuesText = ref(null);
-const value1 = ref(null);
-const value2 = ref(null);
-const value3 = ref(null);
-const team1 = ref(null);
-const team2 = ref(null);
-const team3 = ref(null);
+const teamMembers = ref([
+  {
+    name: 'Lanre Oluseye',
+    role: 'MD/CEO',
+    image: '/images/1.png',
+    bio: 'Lanre Oluseye is a passionate architect and visionary leader known for his ability to motivate and inspire audiences as a conference speaker. With an Executive MBA from the esteemed Metropolitan Business School in the United Kingdom, he equips himself with advanced business acumen that complements his architectural expertise. He is an alumnus of several prestigious institutions, including the Graduate School of Business at the University of Cape Town, where he gained deep insights into global business practices, as well as the Dale Carnegie Institute, renowned for its focus on leadership and personal development, and the London School of Economics and Political Science, where he explored the intersection of economics and social sciences. In addition to his formal education, Lanre is a Certified International Project Manager (CIPM), showcasing his proficiency in managing complex projects across various sectors. His recognition as a Fellow of the American Academy of Project Managers (FAAPM) reflects his commitment to excellence and leadership in project management. Recently, he has further broadened his expertise by qualifying as a Certified Emotional Intelligence Specialist, enabling him to harness the power of emotional intelligence to enhance teamwork and drive positive change within organizations. Lanre’s multifaceted background and dedication to his craft make him a prominent figure in both architecture and project management.',
+    showBio: false
+  },
+  {
+    name: 'Chinwe Wilcox',
+    role: 'Accountant',
+    image: '/images/5.png',
+    bio: 'Otu Jacobs holds a Higher National Diploma in Welding and Fabrication Engineering Technology from the Petroleum Training Institute, Effurun, Delta State, and is certified as a Professional Scrum Master (PSM) and Project Management Professional (PMP). With over a decade of experience, including 7 years in the oil and gas industry, he brings knowledge and expertise to every project he undertakes.',
+    showBio: false
+  },
+  {
+    name: 'Oluwatobi Iyanda',
+    role: 'Business Development Manager',
+    image: '/images/2.png',
+    bio: 'Chinwe Wilcox is an accomplished accounting professional with a robust academic foundation. She holds a Bachelor of Science (BSc) degree in Accounting from Michael Okpara University of Agriculture, Umudike, and a Master of Science (MSc) degree in Accounting from Rivers State University. With over 10 years of advancing experience across various functions in the financial services sector, Chinwe has developed a keen expertise in accounting and finance.',
+    showBio: false
+  },
+  {
+    name: 'Promise Udoh',
+    role: 'Head of Operations',
+    image: '/images/4.png',
+    bio: 'Efetobore Umiaghwa is a dedicated professional with a strong academic foundation in oil and gas engineering, having graduated from All Nations University, Ghana. With six years of extensive experience in the Energy sector, Efetobore has developed vast knowledge and expertise in the industry. She is pursuing her Master of Science (MSc) in Oil and Gas and Energy Management from Port-Harcourt Business School, further enhancing her skills and capabilities.',
+    showBio: false
+  },
+  {
+    name: 'Otu Jacobs',
+    role: 'Engineering/Fabrications',
+    image: '/images/3.png',
+    bio: 'Promise Udoh is a skilled civil engineer with a Higher National Diploma in Civil Engineering and five years of extensive experience in the oil and gas sector. His strong technical expertise and operational oversight skills ensure the successful execution of projects with precision and excellence. Promises dedication and attention to detail make him a vital asset to any team.',
+    showBio: false
+  },
+  {
+    name: 'Efetobore Umiaghwa',
+    role: 'General Manager',
+    image: '/images/6.png',
+    bio: 'Oluwatobi Iyanda holds a Bachelor of Agriculture (B.Agric) in Horticulture from the Federal University of Agriculture, Abeokuta. She has extensive experience in business development across various sectors and has been a Business Development Manager in the oil and gas sector for seven years. To enhance her expertise, she has undergone specialized training and obtained certifications in business development, equipping her with advanced skills in market analysis, strategic planning, client relationship management, and project management. ',
+    showBio: false
+  }
+]);
 
-onMounted(() => {
-  // GSAP animation for story section
-  gsap.from(storyTitle.value, { opacity: 0, y: -50, duration: 1 });
-  gsap.from(storyText1.value, { opacity: 0, y: 20, duration: 1, delay: 0.3 });
-  gsap.from(storyText2.value, { opacity: 0, y: 20, duration: 1, delay: 0.6 });
-  gsap.from(storyImage.value, { opacity: 0, scale: 0.9, duration: 1, delay: 0.9 });
-
-  // GSAP animation for core values section
-  gsap.from(coreValuesTitle.value, { opacity: 0, x: -50, duration: 1 });
-  gsap.from(coreValuesText.value, { opacity: 0, y: 20, duration: 1, delay: 0.3 });
-  gsap.from(value1.value, { opacity: 0, x: -50, duration: 1, delay: 0.6 });
-  gsap.from(value2.value, { opacity: 0, x: 50, duration: 1, delay: 0.9 });
-  gsap.from(value3.value, { opacity: 0, x: -50, duration: 1, delay: 1.2 });
-
-  // GSAP animation for team section
-  gsap.from(team1.value, { opacity: 0, y: 20, duration: 1, delay: 1.5 });
-  gsap.from(team2.value, { opacity: 0, y: 20, duration: 1, delay: 1.8 });
-  gsap.from(team3.value, { opacity: 0, y: 20, duration: 1, delay: 2.1 });
-});
+const toggleBio = (index) => {
+  teamMembers.value[index].showBio = !teamMembers.value[index].showBio;
+};
 </script>
 
 <style scoped>
 .img {
-  width: 8rem; /* Equivalent to w-32 */
-  height: 8rem; /* Equivalent to h-32 */
-  object-fit: cover; /* Ensures images don’t stretch */
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>
