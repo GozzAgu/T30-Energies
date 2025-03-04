@@ -44,14 +44,13 @@
       </div>
     </div>
 
-    <!-- Call to Action Section -->
     <div class="bg-gradient-to-br from-orange-500 to-gray-900 text-white py-16 px-6 lg:px-12 mt-20 rounded-lg">
       <div class="max-w-6xl mx-auto text-center space-y-6">
         <h2 class="text-5xl font-extrabold leading-tight">Ready to Elevate Your Business?</h2>
         <p class="mt-4 text-xl">Let us help you unlock new growth opportunities. Get in touch today to learn how we can work together and take your business to the next level.</p>
-        <NuxtLink to="/contact" class="mt-6 px-8 py-4 bg-white text-orange-500 font-semibold rounded-lg shadow-2xl transform transition-all duration-300 hover:bg-gray-100 hover:shadow-2xl hover:translate-y-2">
+        <!-- <NuxtLink to="/contact" class="px-8 py-4 bg-white text-orange-500 font-semibold rounded-lg shadow-2xl transform transition-all duration-300 hover:bg-gray-100 hover:shadow-2xl hover:translate-y-2">
           Contact Us
-        </NuxtLink>
+        </NuxtLink> -->
       </div>
     </div>
   </section>
