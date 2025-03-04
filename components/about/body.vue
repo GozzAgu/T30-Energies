@@ -5,21 +5,39 @@
       <p class="mt-4 text-gray-600 text-center">
         Our team of passionate individuals is here to bring our vision to life.
       </p>
-      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-12">
-        <div v-for="(member, index) in teamMembers" :key="index" class="text-center relative">
-          <img
-            :src="member.image"
-            :alt="member.name"
-            class="img w-32 h-32 mx-auto rounded-full shadow-lg"
-          />
-          <h4 class="mt-4 font-bold text-lg">{{ member.name }}</h4>
-          <p class="text-gray-600 text-sm">{{ member.role }}</p>
-          <button @click="toggleBio(index)" class="mt-2 text-orange-500 underline text-sm">
-            {{ member.showBio ? 'Hide Bio' : 'View Bio' }}
+
+      <div class="mt-12 space-y-4">
+        <div
+          v-for="(member, index) in teamMembers"
+          :key="index"
+          class="bg-white rounded-lg shadow-md overflow-hidden"
+        >
+          <button
+            @click="toggleAccordion(index)"
+            class="w-full flex items-center justify-between p-6 text-left cursor-pointer"
+          >
+            <div class="flex items-center gap-4">
+              <img
+                :src="member.image"
+                :alt="member.name"
+                class="w-16 h-16 rounded-full object-cover"
+              />
+              <div>
+                <h4 class="text-lg font-bold text-gray-900">{{ member.name }}</h4>
+                <p class="text-sm text-gray-600">{{ member.role }}</p>
+              </div>
+            </div>
+            <span
+              class="text-orange-500 text-xl transform transition-transform duration-300"
+              :class="{ 'rotate-180': member.isOpen }"
+            >
+              ▼
+            </span>
           </button>
-          <transition name="fade">
-            <div v-if="member.showBio" class="absolute top-full left-1/2 transform -translate-x-1/2 w-[200rem] max-w-lg bg-white shadow-lg rounded-lg p-4 z-10">
-              <p class="text-gray-600 text-sm text-start">{{ member.bio }}</p>
+
+          <transition name="accordion">
+            <div v-if="member.isOpen" class="p-6 border-t border-gray-200">
+              <p class="text-sm text-gray-600">{{ member.bio }}</p>
             </div>
           </transition>
         </div>
@@ -43,55 +61,64 @@ const teamMembers = ref([
     name: 'Efetobore Umiaghwa',
     role: 'General Manager',
     image: '/images/6.png',
-    bio: 'Oluwatobi Iyanda holds a Bachelor of Agriculture (B.Agric) in Horticulture from the Federal University of Agriculture, Abeokuta. She has extensive experience in business development across various sectors and has been a Business Development Manager in the oil and gas sector for seven years. To enhance her expertise, she has undergone specialized training and obtained certifications in business development, equipping her with advanced skills in market analysis, strategic planning, client relationship management, and project management. ',
+    bio: 'Efetobore Umiaghwa is a dedicated professional with a strong academic foundation in oil and gas engineering, having graduated from All Nations University, Ghana. With six years of extensive experience in the Energy sector, Efetobore has developed vast knowledge and expertise in the industry. She is pursuing her Master of Science (MSc) in Oil and Gas and Energy Management from Port-Harcourt Business School, further enhancing her skills and capabilities.',
     showBio: false
   },
   {
     name: 'Otu Jacobs',
     role: 'Engineering/Fabrications',
     image: '/images/3.png',
-    bio: 'Promise Udoh is a skilled civil engineer with a Higher National Diploma in Civil Engineering and five years of extensive experience in the oil and gas sector. His strong technical expertise and operational oversight skills ensure the successful execution of projects with precision and excellence. Promises dedication and attention to detail make him a vital asset to any team.',
+    bio: 'Otu Jacobs holds a Higher National Diploma in Welding and Fabrication Engineering Technology from the Petroleum Training Institute, Effurun, Delta State, and is certified as a Professional Scrum Master (PSM) and Project Management Professional (PMP). With over a decade of experience, including 7 years in the oil and gas industry, he brings knowledge and expertise to every project he undertakes.',
     showBio: false
   },
   {
     name: 'Oluwatobi Iyanda',
     role: 'Business Development Manager',
     image: '/images/2.png',
-    bio: 'Chinwe Wilcox is an accomplished accounting professional with a robust academic foundation. She holds a Bachelor of Science (BSc) degree in Accounting from Michael Okpara University of Agriculture, Umudike, and a Master of Science (MSc) degree in Accounting from Rivers State University. With over 10 years of advancing experience across various functions in the financial services sector, Chinwe has developed a keen expertise in accounting and finance.',
+    bio: 'Oluwatobi Iyanda holds a Bachelor of Agriculture (B.Agric) in Horticulture from the Federal University of Agriculture, Abeokuta. She has extensive experience in business development across various sectors and has been a Business Development Manager in the oil and gas sector for seven years. To enhance her expertise, she has undergone specialized training and obtained certifications in business development, equipping her with advanced skills in market analysis, strategic planning, client relationship management, and project management. ',
     showBio: false
   },
   {
     name: 'Promise Udoh',
     role: 'Head of Operations',
     image: '/images/4.png',
-    bio: 'Efetobore Umiaghwa is a dedicated professional with a strong academic foundation in oil and gas engineering, having graduated from All Nations University, Ghana. With six years of extensive experience in the Energy sector, Efetobore has developed vast knowledge and expertise in the industry. She is pursuing her Master of Science (MSc) in Oil and Gas and Energy Management from Port-Harcourt Business School, further enhancing her skills and capabilities.',
+    bio: 'Promise Udoh is a skilled civil engineer with a Higher National Diploma in Civil Engineering and five years of extensive experience in the oil and gas sector. His strong technical expertise and operational oversight skills ensure the successful execution of projects with precision and excellence. Promises dedication and attention to detail make him a vital asset to any team.',
     showBio: false
   },
   {
     name: 'Chinwe Wilcox',
     role: 'Accountant',
     image: '/images/5.png',
-    bio: 'Otu Jacobs holds a Higher National Diploma in Welding and Fabrication Engineering Technology from the Petroleum Training Institute, Effurun, Delta State, and is certified as a Professional Scrum Master (PSM) and Project Management Professional (PMP). With over a decade of experience, including 7 years in the oil and gas industry, he brings knowledge and expertise to every project he undertakes.',
+    bio: 'Chinwe Wilcox is an accomplished accounting professional with a robust academic foundation. She holds a Bachelor of Science (BSc) degree in Accounting from Michael Okpara University of Agriculture, Umudike, and a Master of Science (MSc) degree in Accounting from Rivers State University. With over 10 years of advancing experience across various functions in the financial services sector, Chinwe has developed a keen expertise in accounting and finance.',
     showBio: false
   },
 ]);
 
-const toggleBio = (index) => {
-  teamMembers.value[index].showBio = !teamMembers.value[index].showBio;
+const toggleAccordion = (index) => {
+  teamMembers.value.forEach((member, i) => {
+    member.isOpen = i === index ? !member.isOpen : false; // Only open one at a time
+  });
 };
 </script>
 
+
 <style scoped>
-.img {
-  width: 8rem;
-  height: 8rem;
-  object-fit: cover;
+/* Accordion Animation */
+.accordion-enter-active,
+.accordion-leave-active {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter-from, .fade-leave-to {
+.accordion-enter-from,
+.accordion-leave-to {
+  max-height: 0;
   opacity: 0;
+}
+
+.accordion-enter-to,
+.accordion-leave-from {
+  max-height: 500px;
+  opacity: 1;
 }
 </style>
