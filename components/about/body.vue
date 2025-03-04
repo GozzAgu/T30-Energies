@@ -10,7 +10,7 @@
         <div
           v-for="(member, index) in teamMembers"
           :key="index"
-          class="bg-white rounded-lg shadow-md overflow-hidden"
+          class="bg-white rounded-lg hover:shadow-sm overflow-hidden"
         >
           <button
             @click="toggleAccordion(index)"
