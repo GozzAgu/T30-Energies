@@ -2,7 +2,7 @@
   <section ref="box" class="bg-gray-900 text-white relative min-h-screen flex items-center justify-center overflow-hidden">
     <div
       class="absolute inset-0 bg-cover bg-center opacity-75"
-      style="background-image: url('/hero.webp');"
+      style="background-image: url('/hero.jpeg');"
     ></div>
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 

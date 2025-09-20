@@ -18,7 +18,7 @@
           </div>
           <div>
             <img
-              src="/public/IMG-20241214-WA0001.jpg"
+              src="/watch.png"
               alt="Business Growth"
               class="rounded-lg shadow-md"
               ref="imageOne"
@@ -29,7 +29,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mt-16">
           <div class="order-last lg:order-first">
             <img
-              src="/public/IMG-20241214-WA0006.jpg"
+              src="/men.png"
               alt="Cutting-Edge Solutions"
               class="rounded-lg shadow-md"
               ref="imageTwo"
