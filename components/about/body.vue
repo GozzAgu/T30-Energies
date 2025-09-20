@@ -1,6 +1,24 @@
 <template>
   <section class="bg-gray-50 text-gray-800">
     <div class="max-w-6xl mx-auto py-16 px-6 md:px-12">
+      <!-- Company Profile PDF Button -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Company Profile</h2>
+        <p class="text-gray-600 mb-6">
+          Download our comprehensive company profile to learn more about T30 Energies
+        </p>
+        <a
+          href="/T30 Energies Profile 2025.pdf"
+          target="_blank"
+          class="inline-flex items-center gap-2 bg-orange-400 hover:bg-orange-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+          Download Company Profile (PDF)
+        </a>
+      </div>
+
       <h2 class="text-3xl font-bold text-gray-900 text-center">Meet the Team</h2>
       <p class="mt-4 text-gray-600 text-center">
         Our team of passionate individuals is here to bring our vision to life.

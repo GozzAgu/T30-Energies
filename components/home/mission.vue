@@ -16,7 +16,7 @@
         <!-- Image Section -->
         <div class="lg:w-1/2" ref="imageSection">
           <img
-            src="/public/IMG-20241214-WA0001.jpg"
+            src="/IMG-20241214-WA0002.jpg"
             alt="Energy Operations"
             class="rounded-lg shadow-lg"
           />
