@@ -81,6 +81,9 @@
         <a href="#" class="text-orange-400 mx-2 hover:underline">LinkedIn</a>
       </p>
       <p class="text-xs text-gray-500 mt-2">&copy; 2025 T30 Energies. All rights reserved.</p>
+      <div class="text-gray-300 text-sm">
+        © 2025 T30 Energies. All rights reserved. Designed by <NuxtLink to="https://goz-portfolio-app.vercel.app/" class="text-white hover:text-blue-400 transition-colors">Big Goz</NuxtLink>
+      </div>
     </div>
   </footer>
 </template>
