@@ -1,39 +1,40 @@
 <template>
   <section class="bg-gradient-to-b from-gray-50 to-white text-gray-800">
-    <div class="max-w-7xl mx-auto py-20 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto py-12 md:py-20 px-4 sm:px-6 md:px-12">
       <!-- Company Profile PDF Button -->
-      <div class="text-center mb-20 bg-gradient-to-r from-orange-50 to-gray-50 rounded-2xl p-12 shadow-inner">
-        <div class="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
-          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="text-center mb-12 md:mb-20 bg-gradient-to-r from-orange-50 to-gray-50 rounded-2xl p-6 md:p-12 shadow-inner">
+        <div class="w-16 h-16 md:w-20 md:h-20 bg-orange-500 rounded-2xl flex items-center justify-center mb-4 md:mb-6 mx-auto shadow-lg">
+          <svg class="w-8 h-8 md:w-10 md:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
           </svg>
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Company Profile</h2>
-        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">Company Profile</h2>
+        <p class="text-base md:text-lg text-gray-600 mb-6 md:mb-8 max-w-2xl mx-auto">
           Download our comprehensive company profile to learn more about T30 Energies, our services, and our achievements
         </p>
         <a
           href="/T30 Energies Profile 2025.pdf"
           target="_blank"
-          class="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+          class="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-sm md:text-base"
         >
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
           </svg>
-          Download Company Profile (PDF)
+          <span class="hidden sm:inline">Download Company Profile (PDF)</span>
+          <span class="sm:hidden">Download Profile</span>
         </a>
       </div>
 
       <!-- Team Section -->
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6"></div>
-        <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+      <div class="text-center mb-8 md:mb-12">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4">Meet Our Team</h2>
+        <div class="w-20 md:w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-4 md:mb-6"></div>
+        <p class="mt-4 text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-4">
           Our team of dedicated professionals brings together decades of experience and expertise to deliver exceptional results in the energy sector.
         </p>
       </div>
 
-      <div class="mt-12 space-y-6">
+      <div class="mt-8 md:mt-12 space-y-4 md:space-y-6">
         <div
           v-for="(member, index) in teamMembers"
           :key="index"
@@ -42,37 +43,37 @@
         >
           <button
             @click="toggleAccordion(index)"
-            class="w-full flex items-center justify-between p-8 text-left cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+            class="w-full flex items-center justify-between p-6 md:p-8 text-left cursor-pointer hover:bg-gray-50 transition-colors duration-200"
           >
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 md:gap-6">
               <div class="relative">
                 <img
                   :src="member.image"
                   :alt="member.name"
-                  class="w-20 h-20 rounded-full object-cover ring-4 ring-orange-100 transition-transform duration-300"
+                  class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover ring-4 ring-orange-100 transition-transform duration-300"
                   :class="{ 'scale-110': member.isOpen }"
                 />
-                <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <div class="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 w-6 h-6 md:w-8 md:h-8 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-3 h-3 md:w-4 md:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
                   </svg>
                 </div>
               </div>
-              <div>
-                <h4 class="text-2xl font-bold text-gray-900 mb-1">{{ member.name }}</h4>
-                <p class="text-base text-orange-600 font-semibold">{{ member.role }}</p>
+              <div class="flex-1 min-w-0">
+                <h4 class="text-lg md:text-2xl font-bold text-gray-900 mb-1 truncate">{{ member.name }}</h4>
+                <p class="text-sm md:text-base text-orange-600 font-semibold truncate">{{ member.role }}</p>
               </div>
             </div>
-            <div class="flex items-center gap-3">
-              <span class="hidden md:block text-sm text-gray-500 font-medium">
+            <div class="flex items-center gap-2 md:gap-3 flex-shrink-0">
+              <span class="hidden lg:block text-sm text-gray-500 font-medium">
                 {{ member.isOpen ? 'Click to close' : 'Click to learn more' }}
               </span>
               <div
-                class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center transform transition-transform duration-300"
+                class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-orange-100 flex items-center justify-center transform transition-transform duration-300"
                 :class="{ 'rotate-180 bg-orange-500': member.isOpen }"
               >
                 <svg
-                  class="w-5 h-5 transition-colors duration-300"
+                  class="w-4 h-4 md:w-5 md:h-5 transition-colors duration-300"
                   :class="member.isOpen ? 'text-white' : 'text-orange-600'"
                   fill="none"
                   stroke="currentColor"
@@ -85,9 +86,9 @@
           </button>
 
           <transition name="accordion">
-            <div v-if="member.isOpen" class="px-8 pb-8 pt-4 border-t border-gray-100 bg-gradient-to-br from-gray-50 to-orange-50">
-              <div class="bg-white rounded-xl p-6 shadow-inner">
-                <p class="text-base text-gray-700 leading-relaxed">{{ member.bio }}</p>
+            <div v-if="member.isOpen" class="px-6 md:px-8 pb-6 md:pb-8 pt-4 border-t border-gray-100 bg-gradient-to-br from-gray-50 to-orange-50">
+              <div class="bg-white rounded-xl p-4 md:p-6 shadow-inner">
+                <p class="text-sm md:text-base text-gray-700 leading-relaxed">{{ member.bio }}</p>
               </div>
             </div>
           </transition>
