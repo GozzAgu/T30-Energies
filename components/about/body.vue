@@ -76,13 +76,13 @@ const teamMembers = ref([
     showBio: false
   },
   {
-    name: 'Efetobore Umiaghwa',
-    role: 'General Manager',
-    image: '/efe.png',
-    bio: 'Efetobore Umiaghwa is a dedicated professional with a strong academic foundation in oil and gas engineering, having graduated from All Nations University, Ghana. With six years of extensive experience in the Energy sector, Efetobore has developed vast knowledge and expertise in the industry. She is pursuing her Master of Science (MSc) in Oil and Gas and Energy Management from Port-Harcourt Business School, further enhancing her skills and capabilities.',
+    name: 'Samson Eboh',
+    role: 'Head of IT & Communications',
+    image: '/samson.png',
+    bio: 'Eboh Samson is a results-driven professional with a degree in International Studies and Diplomacy from the prestigious University of Benin. With over three years of experience in the oil and gas industry and more than seven years in Information Technology, he brings a rare blend of strategic insight and technical expertise. Certified in Data Analysis and Project Management, Samson leverages innovation and precision to deliver impactful, technology-driven solutions across diverse sectors.',
     showBio: false
   },
-  {
+  {  
     name: 'Otu Jacobs',
     role: 'Engineering/Fabrications',
     image: '/otu.png',
