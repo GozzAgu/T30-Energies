@@ -25,6 +25,42 @@
         </a>
       </div>
 
+      <!-- About Us Section -->
+      <div class="mb-16 md:mb-20">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">About Us</h2>
+          <div class="w-20 md:w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6"></div>
+        </div>
+        
+        <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 lg:p-16 border border-gray-100">
+          <div class="max-w-4xl mx-auto">
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              T30 Energies Limited is a forward-thinking Nigerian energy and engineering company committed to delivering innovative solutions that advance the nation's energy and infrastructure landscape. Rooted in a vision to promote sustainability, efficiency, and reliability, we leverage Nigeria's abundant resources and engineering expertise to provide value-driven services across multiple sectors.
+            </p>
+            
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              Our <span class="font-semibold text-orange-600">CNG Solutions and Conversion Services</span> are designed to support Nigeria's transition toward cleaner and more affordable energy. From the provision of advanced CNG toolkits to vehicle conversions, refilling infrastructure, heavy-duty applications, and capacity-building programs, we champion the domestication of natural gas as a viable energy alternative for households, businesses, and the transport sector.
+            </p>
+            
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              In addition, T30 Energies offers <span class="font-semibold text-orange-600">Civil Engineering Services</span> tailored to Nigeria's infrastructure development needs. We deliver durable, cost-effective, and sustainable construction solutions, ensuring compliance with local and international standards.
+            </p>
+            
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              Through our <span class="font-semibold text-orange-600">Engineering Procurement</span> capabilities, we provide clients with access to high-quality equipment, technology, and technical expertise, ensuring seamless project execution. Coupled with our <span class="font-semibold text-orange-600">Material Procurement Services</span>, we guarantee efficient supply chain management and reliable delivery of construction and industrial materials that meet stringent quality benchmarks.
+            </p>
+            
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              We further support large-scale operations with <span class="font-semibold text-orange-600">Project Management</span> and <span class="font-semibold text-orange-600">Manpower Recruitment & Training</span> services. Our approach combines global best practices with a deep understanding of local conditions to deliver projects on time, within scope, and with a skilled workforce. By investing in capacity building, we empower professionals across industries and contribute to national development.
+            </p>
+            
+            <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
+              At T30 Energies, we are not only delivering projects, we are building a future defined by innovation, sustainability, and growth. Our commitment to excellence and integrity positions us as a trusted partner in driving Nigeria's energy transition and infrastructure advancement.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <!-- Team Section -->
       <div class="text-center mb-8 md:mb-12">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4">Meet Our Team</h2>
@@ -107,6 +143,13 @@ const teamMembers = ref([
     role: 'MD/CEO',
     image: '/lanre.png',
     bio: 'Lanre Oluseye is a passionate architect and visionary leader known for his ability to motivate and inspire audiences as a conference speaker. With an Executive MBA from the esteemed Metropolitan Business School in the United Kingdom, he equips himself with advanced business acumen that complements his architectural expertise. He is an alumnus of several prestigious institutions, including the Graduate School of Business at the University of Cape Town, where he gained deep insights into global business practices, as well as the Dale Carnegie Institute, renowned for its focus on leadership and personal development, and the London School of Economics and Political Science, where he explored the intersection of economics and social sciences. In addition to his formal education, Lanre is a Certified International Project Manager (CIPM), showcasing his proficiency in managing complex projects across various sectors. His recognition as a Fellow of the American Academy of Project Managers (FAAPM) reflects his commitment to excellence and leadership in project management. Recently, he has further broadened his expertise by qualifying as a Certified Emotional Intelligence Specialist, enabling him to harness the power of emotional intelligence to enhance teamwork and drive positive change within organizations. Lanre’s multifaceted background and dedication to his craft make him a prominent figure in both architecture and project management.',
+    showBio: false
+  },
+  {
+    name: 'Efetobore Umiaghwa',
+    role: 'General Manager',
+    image: '/efe.png',
+    bio: 'Efetobore Umiaghwa is a dedicated professional with a strong academic foundation in oil and gas engineering, having graduated from All Nations University, Ghana. With six years of extensive experience in the Energy sector, Efetobore has developed vast knowledge and expertise in the industry. She is pursuing her Master of Science (MSc) in Oil and Gas and Energy Management from Port-Harcourt Business School, further enhancing her skills and capabilities.',
     showBio: false
   },
   {

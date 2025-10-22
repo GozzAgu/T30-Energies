@@ -15,13 +15,17 @@
       <!-- Content Section -->
       <div class="flex flex-col lg:flex-row items-center gap-12">
         <!-- Image Section -->
-        <div class="lg:w-1/2 relative" ref="imageSection">
-          <div class="absolute -inset-4 bg-gradient-to-r from-orange-400 to-orange-600 rounded-3xl opacity-20 blur-2xl"></div>
-          <img
-            src="/IMG-20241214-WA0002.jpg"
-            alt="Energy Operations"
-            class="relative rounded-2xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-300"
-          />
+        <div class="lg:w-1/2 relative group" ref="imageSection">
+          <div class="absolute -inset-4 bg-gradient-to-r from-orange-400 to-orange-600 rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-300"></div>
+          <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+            <img
+              src="/IMG-20241214-WA0002.jpg"
+              alt="Energy Operations"
+              class="w-full h-auto transform group-hover:scale-110 transition-transform duration-500"
+            />
+            <!-- Overlay on hover -->
+            <div class="absolute inset-0 bg-gradient-to-t from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
         </div>
 
         <!-- Text Section -->

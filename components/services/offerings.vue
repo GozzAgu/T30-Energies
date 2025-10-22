@@ -130,46 +130,40 @@ const route = useRoute();
 
 const services = [
   {
-    title: "Gas Products Marketing",
-    description: "T30 Energies Ltd is at the forefront of gas product marketing, leveraging our extensive network and industry knowledge to deliver competitive and reliable solutions tailored to our clients' needs. We provide a wide range of gas products, ensuring consistent supply and efficient distribution.",
-    link: "/services/gas-products-marketing",
+    title: "CNG Solutions & Conversion Services",
+    description: "We provide comprehensive Compressed Natural Gas (CNG) solutions and conversion services, helping businesses transition to cleaner, more cost-effective energy alternatives. Our expert team handles everything from system design to installation and maintenance.",
+    link: "/services/cng-solutions",
     image: "/gas.png"
   },
   {
-    title: "Chemical Supply (General Purpose/Analar Grade)",
-    description: "We offer a comprehensive range of chemical supplies, including both general-purpose and analytical reagent grade chemicals. Our products are sourced from reputable manufacturers to ensure quality and reliability, meeting the needs of our clients across various industries.",
-    link: "/services/chemical-supply",
-    image: "/chemical.png"
-  },
-  {
-    title: "Road Construction",
-    description: "We specialize in building robust and efficient road networks that connect communities and support economic development. Our team utilizes state-of-the-art technology and best practices to deliver high-quality roads that stand the test of time. We handle everything from initial planning and design to construction and maintenance.",
-    link: "/services/road-construction",
-    image: "/construction.png"
-  },
-  {
-    title: "Civil Engineering Construction",
-    description: "Our expertise extends to various civil engineering projects, including bridges, tunnels, dams, and public infrastructure. We combine technical skills with creative solutions to deliver projects that meet the highest standards of safety, quality, and sustainability. We ensure every project is completed on time and within budget.",
+    title: "Civil Engineering",
+    description: "Our civil engineering expertise covers a wide range of infrastructure projects including roads, bridges, water systems, and public facilities. We combine technical excellence with innovative solutions to deliver projects that meet the highest standards of safety, quality, and sustainability.",
     link: "/services/civil-engineering",
     image: "/civil.png"
   },
   {
-    title: "Trading and Bulk Utilization",
-    description: "We specialize in the trading and bulk utilization of gas products, ensuring a consistent and efficient supply chain. Our strategic approach and partnerships allow us to provide cost-effective and timely services for both small and large-scale deliveries.",
-    link: "/services/trading-bulk-utilization",
+    title: "Engineering Procurement",
+    description: "We offer comprehensive engineering procurement services, sourcing and managing the acquisition of specialized equipment, materials, and services required for complex engineering projects. Our procurement expertise ensures quality, cost-effectiveness, and timely delivery.",
+    link: "/services/engineering-procurement",
+    image: "/construction.png"
+  },
+  {
+    title: "Material Procurement",
+    description: "Our material procurement services cover a wide range of industrial materials, equipment, and supplies needed for various projects. We leverage our extensive supplier network to ensure competitive pricing, quality assurance, and reliable delivery schedules.",
+    link: "/services/material-procurement",
     image: "/trade.png"
   },
   {
-    title: "Safety Equipment (PPE)",
-    description: "We supply high-quality personal protective equipment (PPE) to ensure worker safety across various industries. Our range includes helmets, gloves, safety glasses, protective clothing, and other essential PPE items, all meeting rigorous safety standards.",
-    link: "/services/safety-equipment",
-    image: "/safety.png"
-  },
-  {
     title: "Project Management",
-    description: "We provide comprehensive project management services, ensuring every project is executed successfully. From planning and procurement to construction and execution, our team is committed to delivering projects on time, on budget, and to the highest quality standards.",
+    description: "We provide comprehensive project management services, ensuring every project is executed successfully from conception to completion. Our experienced project managers coordinate all aspects of project delivery, maintaining quality, timeline, and budget adherence.",
     link: "/services/project-management",
     image: "/project.png"
+  },
+  {
+    title: "Manpower Recruitment & Training",
+    description: "We specialize in recruiting and training skilled professionals for the energy and construction sectors. Our recruitment services identify top talent, while our training programs ensure workers are equipped with the latest industry knowledge and safety protocols.",
+    link: "/services/recruitment-training",
+    image: "/safety.png"
   },
 ];
 

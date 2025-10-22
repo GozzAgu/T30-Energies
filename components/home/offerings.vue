@@ -22,10 +22,13 @@
           <!-- Hover overlay -->
           <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           
+          <!-- Decorative corner element -->
+          <div class="absolute top-4 right-4 w-3 h-3 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
           <div class="relative">
             <div class="flex items-center justify-center mb-6">
-              <div class="flex items-center justify-center bg-gradient-to-br from-orange-100 to-orange-50 p-4 rounded-2xl h-16 w-16 shadow-md group-hover:scale-110 transition-transform duration-300">
-                <Icon :name="service.icon" class="text-orange-600 text-4xl" />
+              <div class="flex items-center justify-center bg-gradient-to-br from-orange-100 to-orange-50 p-4 rounded-2xl h-16 w-16 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <Icon :name="service.icon" class="text-orange-600 text-4xl group-hover:text-orange-700 transition-colors duration-300" />
               </div>
             </div>
             
@@ -34,12 +37,12 @@
             </h3>
             
             <!-- Truncated Text with Max Lines -->
-            <p class="text-gray-600 leading-relaxed text-sm line-clamp-3 text-center mb-6">
+            <p class="text-gray-600 leading-relaxed text-sm line-clamp-3 text-center mb-6 group-hover:text-gray-700 transition-colors duration-300">
               {{ service.description }}
             </p>
             
             <div class="flex justify-center">
-              <button class="inline-flex items-center gap-2 text-orange-600 font-semibold group-hover:gap-3 transition-all duration-300">
+              <button class="inline-flex items-center gap-2 text-orange-600 font-semibold group-hover:gap-3 transition-all duration-300 group-hover:text-orange-700">
                 Learn More
                 <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -77,45 +80,39 @@ const redirectToPage = (service) => {
 const services = [
   {
     icon: "material-symbols:gas-meter-outline-rounded",
-    title: "Road Construction",
-    description: "We specialize in building robust and efficient road networks that connect communities and support economic development. Our team utilizes state-of-the-art technology and best practices to deliver high-quality roads that stand the test of time. We handle everything from initial planning and design to construction and maintenance, ensuring seamless project execution.",
-    link: "/services/road-construction"
+    title: "CNG Solutions & Conversion Services",
+    description: "We provide comprehensive Compressed Natural Gas (CNG) solutions and conversion services, helping businesses transition to cleaner, more cost-effective energy alternatives. Our expert team handles everything from system design to installation and maintenance.",
+    link: "/services/cng-solutions"
   },
   {
     icon: "material-symbols:globe",
-    title: "Civil Engineering Construction",
-    description: "Our expertise extends to various civil engineering projects, including bridges, tunnels, dams, and public infrastructure. We combine technical skills with creative solutions to deliver projects that meet the highest standards of safety, quality, and sustainability. Our comprehensive approach ensures that every project is completed on time and within budget.",
+    title: "Civil Engineering",
+    description: "Our civil engineering expertise covers a wide range of infrastructure projects including roads, bridges, water systems, and public facilities. We combine technical excellence with innovative solutions to deliver projects that meet the highest standards of safety, quality, and sustainability.",
     link: "/services/civil-engineering"
   },
   {
-    icon: "material-symbols:shield-rounded",
-    title: "Gas Products Marketing",
-    description: "T30 Energies Ltd is at the forefront of gas product marketing, leveraging our extensive network and industry knowledge to deliver competitive and reliable solutions tailored to our clients' needs. We provide a wide range of gas products, including LPG, LNG, and natural gas, ensuring consistent supply and efficient distribution.",
-    link: "/services/gas-products-marketing"
+    icon: "material-symbols:engineering",
+    title: "Engineering Procurement",
+    description: "We offer comprehensive engineering procurement services, sourcing and managing the acquisition of specialized equipment, materials, and services required for complex engineering projects. Our procurement expertise ensures quality, cost-effectiveness, and timely delivery.",
+    link: "/services/engineering-procurement"
   },
   {
-    icon: "mdi:chart-line",
-    title: "Trading and Bulk Utilization",
-    description: "We are experts in the trading and bulk utilization of gas products, ensuring a consistent and efficient supply chain. Our strategic approach and strong partnerships allow us to provide cost-effective and timely services. We offer customized solutions that meet the specific needs of our clients, from small scale deliveries to large bulk orders",
-    link: "/services/trading-bulk-utilization"
+    icon: "material-symbols:inventory",
+    title: "Material Procurement",
+    description: "Our material procurement services cover a wide range of industrial materials, equipment, and supplies needed for various projects. We leverage our extensive supplier network to ensure competitive pricing, quality assurance, and reliable delivery schedules.",
+    link: "/services/material-procurement"
   },
   {
-    icon: "material-symbols:eco-rounded",
-    title: "Safety Equipment (PPE)",
-    description: "We supply high-quality personal protective equipment (PPE) to ensure the safety and well-being of workers in various industries. Our range includes helmets, gloves, safety glasses, protective clothing, and other essential PPE items, all meeting rigorous safety standards. We are committed to providing reliable and effective safety solutions that protect workers and enhance workplace safety.",
-    link: "/services/safety-equipment"
-  },
-  {
-    icon: "material-symbols:eco-rounded",
-    title: "Chemical Supply (General Purpose/Analar Grade)",
-    description: "T30 Energies Ltd offers a comprehensive range of chemical supplies, including both general-purpose and analytical reagent (analar) grade chemicals. Our products are sourced from reputable manufacturers to ensure quality and reliability. We provide tailored solutions that meet the specific needs of our clients, supporting their operational requirements across various industries.",
-    link: "/services/chemical-supply"
-  },
-  {
-    icon: "material-symbols:eco-rounded",
+    icon: "material-symbols:project-management",
     title: "Project Management",
-    description: "At T30 Energies Ltd, we strive for excellence in project management and execution. Our engineering, procurement, and construction teams work closely to ensure every project is built successfully from the ground up. We collaborate with our clients to plan, execute, monitor, and control projects, ensuring satisfaction at every stage. By paying close attention to each phase's deliverables, we ensure successful project completion, regardless of the terrain.",
+    description: "We provide comprehensive project management services, ensuring every project is executed successfully from conception to completion. Our experienced project managers coordinate all aspects of project delivery, maintaining quality, timeline, and budget adherence.",
     link: "/services/project-management"
+  },
+  {
+    icon: "material-symbols:groups",
+    title: "Manpower Recruitment & Training",
+    description: "We specialize in recruiting and training skilled professionals for the energy and construction sectors. Our recruitment services identify top talent, while our training programs ensure workers are equipped with the latest industry knowledge and safety protocols.",
+    link: "/services/recruitment-training"
   },
 ];
 </script>

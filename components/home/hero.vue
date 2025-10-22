@@ -10,6 +10,7 @@
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute top-1/4 right-1/4 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
       <div class="absolute bottom-1/4 left-1/4 w-72 h-72 bg-orange-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-orange-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
@@ -105,8 +106,21 @@ onMounted(() => {
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-20px) rotate(180deg);
+  }
+}
+
 .animate-blob {
   animation: blob 7s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 .animation-delay-2000 {

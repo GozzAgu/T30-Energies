@@ -17,16 +17,29 @@
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+          class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden"
           :ref="el => (featureRefs[index] = el)"
         >
-          <div class="flex items-center justify-center bg-gradient-to-br from-orange-100 to-orange-50 p-4 rounded-2xl h-16 w-16 mb-6 shadow-md">
-            <Icon :name="feature.icon" class="text-orange-600 text-3xl" />
+          <!-- Hover Background Effect -->
+          <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <!-- Icon Container with Animation -->
+          <div class="relative flex items-center justify-center bg-gradient-to-br from-orange-100 to-orange-50 p-4 rounded-2xl h-16 w-16 mb-6 shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+            <Icon :name="feature.icon" class="text-orange-600 text-3xl group-hover:text-orange-700 transition-colors duration-300" />
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">{{ feature.title }}</h3>
-          <p class="text-gray-600 leading-relaxed text-sm">
-            {{ feature.description }}
-          </p>
+          
+          <!-- Content -->
+          <div class="relative">
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
+              {{ feature.title }}
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300">
+              {{ feature.description }}
+            </p>
+          </div>
+          
+          <!-- Decorative Element -->
+          <div class="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
       </div>
     </div>
