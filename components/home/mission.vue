@@ -98,11 +98,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Temporarily disable GSAP animations
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register GSAP's ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 // Refs for the elements to animate
 const sectionRef = ref(null);
@@ -113,37 +113,7 @@ const listSection = ref(null);
 const buttonSection = ref(null);
 
 onMounted(() => {
-  // Ensure elements are visible by default
-  if (titleSection.value) {
-    gsap.set(titleSection.value, { opacity: 1, y: 0 });
-  }
-  if (imageSection.value) {
-    gsap.set(imageSection.value, { opacity: 1, x: 0 });
-  }
-  if (textSection.value) {
-    gsap.set(textSection.value, { opacity: 1, x: 0 });
-  }
-  if (listSection.value) {
-    gsap.set(listSection.value.children, { opacity: 1, y: 0 });
-  }
-  if (buttonSection.value) {
-    gsap.set(buttonSection.value, { opacity: 1, scale: 1 });
-  }
-
-  // Optional: Add subtle animations on scroll
-  if (sectionRef.value) {
-    gsap.fromTo(sectionRef.value, 
-      { opacity: 0.8 },
-      { 
-        opacity: 1,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: sectionRef.value,
-          start: 'top 90%',
-          toggleActions: 'play none none none',
-        }
-      }
-    );
-  }
+  // Temporarily disabled GSAP animations
+  // Elements will be visible by default
 });
 </script>

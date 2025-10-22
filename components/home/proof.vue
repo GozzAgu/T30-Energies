@@ -59,37 +59,15 @@
 
 <script setup>
 import { onMounted } from "vue";
-import gsap from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Temporarily disable GSAP animations
+// import gsap from "gsap";
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  // Ensure both cards are visible immediately
-  const cards = document.querySelectorAll("[data-gsap='content']");
-  cards.forEach(card => {
-    gsap.set(card, { 
-      opacity: 1, 
-      x: 0,
-      display: 'block'
-    });
-  });
-
-  // Optional: Add a subtle fade-in effect without hiding elements
-  gsap.fromTo("[data-gsap='content']", 
-    { opacity: 0.7 },
-    { 
-      opacity: 1,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: "[data-gsap='content']",
-        start: "top 85%",
-        toggleActions: "play none none none"
-      }
-    }
-  );
+  // Temporarily disabled GSAP animations
+  // Cards will be visible by default
 });
 </script>
 

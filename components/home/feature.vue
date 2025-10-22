@@ -35,43 +35,19 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Temporarily disable GSAP animations
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register the ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const headingSection = ref(null);
 const featuresSection = ref(null);
 const featureRefs = ref([]); // To store references to feature cards
 
 onMounted(() => {
-  // Animate the heading section
-  gsap.from(headingSection.value, {
-    opacity: 0,
-    y: -50,
-    duration: 1,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: headingSection.value,
-      start: 'top 80%', // Trigger animation when section is 80% visible
-    },
-  });
-
-  // Animate the feature cards
-  featureRefs.value.forEach((el, index) => {
-    gsap.from(el, {
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      delay: index * 0.2, // Stagger animations for cards
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: featuresSection.value,
-        start: 'top 85%', // Trigger animation when section is 85% visible
-      },
-    });
-  });
+  // Temporarily disabled GSAP animations
+  // Elements will be visible by default
 });
 
 const features = [

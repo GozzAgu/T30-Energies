@@ -69,7 +69,8 @@
 </template>
 
 <script setup lang="ts">
-import { gsap } from 'gsap';
+import { ref, onMounted } from 'vue';
+import gsap from 'gsap';
 
 const box = ref(null);
 const content = ref(null);
