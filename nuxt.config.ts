@@ -26,6 +26,9 @@ export default defineNuxtConfig({
     }
   },
   modules: ['@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  icon: {
+    collections: ['mdi', 'material-symbols', 'heroicons-outline']
+  },
   css: ['@/assets/css/main.css'],
   postcss: {
     plugins: {
