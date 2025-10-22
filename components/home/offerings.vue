@@ -1,43 +1,66 @@
 <template>
-  <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-32">
+  <section class="bg-gradient-to-b from-white to-gray-50 py-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <!-- Section Title -->
       <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-800">
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
           Explore Our <span class="text-orange-500">Services</span>
         </h2>
-        <p class="text-gray-600 mt-6 text-lg">
+        <div class="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6"></div>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
           From innovation to implementation, we deliver cutting-edge solutions tailored to your needs.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
           v-for="(service, index) in services"
           :key="index"
-          class="cursor-pointer bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 duration-300"
+          @click="redirectToPage(service)"
+          class="group cursor-pointer bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden relative"
         >
-          <div class="flex items-center justify-center mb-6">
-            <div
-              class="flex items-center justify-center bg-orange-100 p-4 rounded-full h-16 w-16"
-            >
-              <Icon :name="service.icon" class="text-orange-500 text-5xl" />
+          <!-- Hover overlay -->
+          <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <div class="relative">
+            <div class="flex items-center justify-center mb-6">
+              <div class="flex items-center justify-center bg-gradient-to-br from-orange-100 to-orange-50 p-4 rounded-2xl h-16 w-16 shadow-md group-hover:scale-110 transition-transform duration-300">
+                <Icon :name="service.icon" class="text-orange-600 text-4xl" />
+              </div>
+            </div>
+            
+            <h3 class="font-bold text-gray-900 mb-4 text-center text-xl group-hover:text-orange-600 transition-colors duration-300">
+              {{ service.title }}
+            </h3>
+            
+            <!-- Truncated Text with Max Lines -->
+            <p class="text-gray-600 leading-relaxed text-sm line-clamp-3 text-center mb-6">
+              {{ service.description }}
+            </p>
+            
+            <div class="flex justify-center">
+              <button class="inline-flex items-center gap-2 text-orange-600 font-semibold group-hover:gap-3 transition-all duration-300">
+                Learn More
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </button>
             </div>
           </div>
-          <h3 class="font-semibold text-gray-800 mb-4 text-center">
-            {{ service.title }}
-          </h3>
-          <!-- Truncated Text with Max Lines -->
-          <p class="text-gray-600 leading-relaxed text-xs line-clamp-3">
-            {{ service.description }}
-          </p>
-          <button
-            @click="redirectToPage(service)"
-            class="text-orange-500 mt-4 underline hover:text-orange-700"
-          >
-            Read More
-          </button>
         </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-20 text-center">
+        <NuxtLink
+          to="/services"
+          class="inline-flex items-center gap-2 px-8 py-4 text-white bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 rounded-xl shadow-xl font-bold text-lg transition-all duration-300 transform hover:scale-105"
+        >
+          View All Services
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </NuxtLink>
       </div>
     </div>
   </section>

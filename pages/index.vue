@@ -6,6 +6,7 @@
     <HomeMission />
     <HomeProof />
     <HomeOfferings />
+    <HomeCta />
     <Footer />
   </div>
 </template>

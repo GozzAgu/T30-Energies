@@ -1,61 +1,94 @@
 <template>
-  <section class="bg-gray-50 text-gray-800">
-    <div class="max-w-6xl mx-auto py-16 px-6 md:px-12">
+  <section class="bg-gradient-to-b from-gray-50 to-white text-gray-800">
+    <div class="max-w-7xl mx-auto py-20 px-6 md:px-12">
       <!-- Company Profile PDF Button -->
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Company Profile</h2>
-        <p class="text-gray-600 mb-6">
-          Download our comprehensive company profile to learn more about T30 Energies
+      <div class="text-center mb-20 bg-gradient-to-r from-orange-50 to-gray-50 rounded-2xl p-12 shadow-inner">
+        <div class="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Company Profile</h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          Download our comprehensive company profile to learn more about T30 Energies, our services, and our achievements
         </p>
         <a
           href="/T30 Energies Profile 2025.pdf"
           target="_blank"
-          class="inline-flex items-center gap-2 bg-orange-400 hover:bg-orange-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition duration-300 transform hover:scale-105"
+          class="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
         >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
           </svg>
           Download Company Profile (PDF)
         </a>
       </div>
 
-      <h2 class="text-3xl font-bold text-gray-900 text-center">Meet the Team</h2>
-      <p class="mt-4 text-gray-600 text-center">
-        Our team of passionate individuals is here to bring our vision to life.
-      </p>
+      <!-- Team Section -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6"></div>
+        <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+          Our team of dedicated professionals brings together decades of experience and expertise to deliver exceptional results in the energy sector.
+        </p>
+      </div>
 
-      <div class="mt-12 space-y-4">
+      <div class="mt-12 space-y-6">
         <div
           v-for="(member, index) in teamMembers"
           :key="index"
-          class="bg-white rounded-lg hover:shadow-sm overflow-hidden"
+          class="bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden transition-all duration-300 border border-gray-100"
+          :class="{ 'ring-2 ring-orange-400': member.isOpen }"
         >
           <button
             @click="toggleAccordion(index)"
-            class="w-full flex items-center justify-between p-6 text-left cursor-pointer"
+            class="w-full flex items-center justify-between p-8 text-left cursor-pointer hover:bg-gray-50 transition-colors duration-200"
           >
-            <div class="flex items-center gap-4">
-              <img
-                :src="member.image"
-                :alt="member.name"
-                class="w-16 h-16 rounded-full object-cover"
-              />
+            <div class="flex items-center gap-6">
+              <div class="relative">
+                <img
+                  :src="member.image"
+                  :alt="member.name"
+                  class="w-20 h-20 rounded-full object-cover ring-4 ring-orange-100 transition-transform duration-300"
+                  :class="{ 'scale-110': member.isOpen }"
+                />
+                <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+              </div>
               <div>
-                <h4 class="text-lg font-bold text-gray-900">{{ member.name }}</h4>
-                <p class="text-sm text-gray-600">{{ member.role }}</p>
+                <h4 class="text-2xl font-bold text-gray-900 mb-1">{{ member.name }}</h4>
+                <p class="text-base text-orange-600 font-semibold">{{ member.role }}</p>
               </div>
             </div>
-            <span
-              class="text-orange-500 text-xl transform transition-transform duration-300"
-              :class="{ 'rotate-180': member.isOpen }"
-            >
-              ▼
-            </span>
+            <div class="flex items-center gap-3">
+              <span class="hidden md:block text-sm text-gray-500 font-medium">
+                {{ member.isOpen ? 'Click to close' : 'Click to learn more' }}
+              </span>
+              <div
+                class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center transform transition-transform duration-300"
+                :class="{ 'rotate-180 bg-orange-500': member.isOpen }"
+              >
+                <svg
+                  class="w-5 h-5 transition-colors duration-300"
+                  :class="member.isOpen ? 'text-white' : 'text-orange-600'"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
           </button>
 
           <transition name="accordion">
-            <div v-if="member.isOpen" class="p-6 border-t border-gray-200">
-              <p class="text-sm text-gray-600">{{ member.bio }}</p>
+            <div v-if="member.isOpen" class="px-8 pb-8 pt-4 border-t border-gray-100 bg-gradient-to-br from-gray-50 to-orange-50">
+              <div class="bg-white rounded-xl p-6 shadow-inner">
+                <p class="text-base text-gray-700 leading-relaxed">{{ member.bio }}</p>
+              </div>
             </div>
           </transition>
         </div>
