@@ -2,20 +2,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   ssr: true,
-  nitro: {
-    prerender: {
-      routes: ['/']
-    }
-  },
-  sitemap: {
-    hostname: 'https://www.t30energies.com',
-    routes: ['/about', '/contact']
-  },
-  robots: {
-    UserAgent: '*',
-    Disallow: '',
-    Sitemap: 'https://www.t30energies.com/sitemap.xml'
-  },
+  robots: {},
   app: {
     head: {
       link: [
