@@ -133,11 +133,6 @@
               © 2025 T30 Energies. All rights reserved.
             </p>
           </div>
-          <div class="flex items-center space-x-6 text-sm">
-            <a href="#" class="text-gray-400 hover:text-orange-400 transition-colors duration-200">Privacy Policy</a>
-            <a href="#" class="text-gray-400 hover:text-orange-400 transition-colors duration-200">Terms of Service</a>
-            <span class="text-gray-500">Designed by <a href="https://goz-portfolio-app.vercel.app/" class="text-orange-400 hover:text-orange-300 transition-colors duration-200">Big Goz</a></span>
-          </div>
         </div>
       </div>
     </div>
