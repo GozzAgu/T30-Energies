@@ -34,7 +34,8 @@
 </template>
 
 <script setup>
-import { gsap } from 'gsap';
+import { ref, onMounted } from 'vue';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Register the ScrollTrigger plugin
