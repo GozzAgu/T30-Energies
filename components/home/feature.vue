@@ -1,45 +1,33 @@
 <template>
-  <section class="bg-gradient-to-b from-gray-50 to-white py-20 text-gray-900">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+  <section class="section bg-white">
+    <div class="container-x">
       <!-- Section Heading -->
-      <div class="text-center mb-16" ref="headingSection">
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          Why Choose <span class="text-orange-500">T30 Energies?</span>
+      <div class="max-w-2xl">
+        <span class="eyebrow">Why T30 Energies</span>
+        <h2 class="display mt-4 text-4xl leading-tight sm:text-5xl">
+          Built on values that set us apart
         </h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mb-6"></div>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-          Explore our core values and what makes us stand out in the energy industry.
+        <p class="mt-5 text-lg text-neutral-600">
+          Explore the core principles that make us a trusted partner in the energy industry.
         </p>
       </div>
 
       <!-- Features Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref="featuresSection">
+      <div class="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 relative overflow-hidden"
-          :ref="el => (featureRefs[index] = el)"
+          class="group bg-white p-8 transition-colors duration-300 hover:bg-neutral-50"
         >
-          <!-- Hover Background Effect -->
-          <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
-          <!-- Icon Container with Animation -->
-          <div class="relative flex items-center justify-center bg-gradient-to-br from-orange-100 to-orange-50 p-4 rounded-2xl h-16 w-16 mb-6 shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-            <Icon :name="feature.icon" class="text-orange-600 text-3xl group-hover:text-orange-700 transition-colors duration-300" />
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-600 transition-colors duration-300 group-hover:bg-orange-600 group-hover:text-white">
+            <Icon :name="feature.icon" class="text-2xl" />
           </div>
-          
-          <!-- Content -->
-          <div class="relative">
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
-              {{ feature.title }}
-            </h3>
-            <p class="text-gray-600 leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300">
-              {{ feature.description }}
-            </p>
-          </div>
-          
-          <!-- Decorative Element -->
-          <div class="absolute top-4 right-4 w-2 h-2 bg-orange-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <h3 class="mt-6 text-lg font-semibold text-neutral-900">
+            {{ feature.title }}
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed text-neutral-600">
+            {{ feature.description }}
+          </p>
         </div>
       </div>
     </div>
@@ -47,22 +35,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-// Temporarily disable GSAP animations
-// import gsap from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// gsap.registerPlugin(ScrollTrigger);
-
-const headingSection = ref(null);
-const featuresSection = ref(null);
-const featureRefs = ref([]); // To store references to feature cards
-
-onMounted(() => {
-  // Temporarily disabled GSAP animations
-  // Elements will be visible by default
-});
-
 const features = [
   {
     icon: 'mdi:leaf',
@@ -90,7 +62,7 @@ const features = [
     description: 'Adhering to the highest safety standards in all our operations.',
   },
   {
-    icon: 'mdi:leaf',
+    icon: 'mdi:recycle',
     title: 'Eco-Friendly',
     description: 'Dedicated to reducing our environmental footprint and promoting sustainability.',
   },

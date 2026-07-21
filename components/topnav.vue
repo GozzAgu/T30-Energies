@@ -1,183 +1,122 @@
 <template>
-  <nav class="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-b border-gray-700/50 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
+  <header
+    class="fixed top-0 left-0 z-50 w-full border-b transition-all duration-300"
+    :class="scrolled
+      ? 'border-white/10 bg-neutral-950/85 backdrop-blur-xl'
+      : 'border-transparent bg-neutral-950/60 backdrop-blur-md'"
+  >
+    <div class="container-x">
+      <div class="flex h-16 items-center justify-between md:h-20">
         <!-- Logo -->
-        <div class="flex items-center">
-          <NuxtLink to="/" class="flex items-center space-x-3 group">
-            <img
-              src="/T30_Energies_Main_Logo[1].png"
-              alt="T30 Energies Logo"
-              class="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-            />
-          </NuxtLink>
-        </div>
+        <NuxtLink to="/" class="flex items-center" aria-label="T30 Energies home">
+          <img
+            src="/T30_Energies_Main_Logo[1].png"
+            alt="T30 Energies"
+            class="h-9 w-auto object-contain transition-opacity duration-200 hover:opacity-80 md:h-11"
+          />
+        </NuxtLink>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
-          <div class="flex items-center space-x-6">
-            <NuxtLink
-              to="/"
-              :class="route.path === '/' ? 'text-orange-400 font-semibold' : 'text-white hover:text-orange-400 transition-colors duration-200'"
-              class="relative group"
-            >
-              Home
-              <span v-if="route.path === '/'" class="absolute -bottom-1 left-0 w-full h-0.5 bg-orange-400 rounded-full"></span>
-            </NuxtLink>
-            <NuxtLink
-              to="/about"
-              :class="route.path.startsWith('/about') ? 'text-orange-400 font-semibold' : 'text-white hover:text-orange-400 transition-colors duration-200'"
-              class="relative group"
-            >
-              About
-              <span v-if="route.path.startsWith('/about')" class="absolute -bottom-1 left-0 w-full h-0.5 bg-orange-400 rounded-full"></span>
-            </NuxtLink>
-            <NuxtLink
-              to="/services"
-              :class="route.path.startsWith('/services') ? 'text-orange-400 font-semibold' : 'text-white hover:text-orange-400 transition-colors duration-200'"
-              class="relative group"
-            >
-              Services
-              <span v-if="route.path.startsWith('/services')" class="absolute -bottom-1 left-0 w-full h-0.5 bg-orange-400 rounded-full"></span>
-            </NuxtLink>
-            <NuxtLink
-              to="/contact"
-              :class="route.path.startsWith('/contact') ? 'text-orange-400 font-semibold' : 'text-white hover:text-orange-400 transition-colors duration-200'"
-              class="relative group"
-            >
-              Contact
-              <span v-if="route.path.startsWith('/contact')" class="absolute -bottom-1 left-0 w-full h-0.5 bg-orange-400 rounded-full"></span>
-            </NuxtLink>
-          </div>
-          
-          <!-- CTA Button -->
+        <nav class="hidden items-center gap-1 md:flex">
           <NuxtLink
-            to="/contact"
-            class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105"
+            v-for="item in links"
+            :key="item.to"
+            :to="item.to"
+            class="relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200"
+            :class="isActive(item.to)
+              ? 'text-white'
+              : 'text-neutral-400 hover:text-white'"
           >
-            Get Quote
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            {{ item.label }}
+            <span
+              v-if="isActive(item.to)"
+              class="absolute inset-x-4 -bottom-px h-0.5 rounded-full bg-orange-500"
+            ></span>
+          </NuxtLink>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="hidden md:block">
+          <NuxtLink to="/contact" class="btn btn-md btn-primary">
+            Get a Quote
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </NuxtLink>
         </div>
 
         <!-- Mobile Menu Button -->
         <button
-          class="md:hidden p-2 rounded-lg text-gray-300 hover:text-orange-400 hover:bg-gray-700/50 transition-colors duration-200"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-200 transition-colors hover:bg-white/10 md:hidden"
           @click="toggleMobileMenu"
           aria-label="Toggle menu"
         >
-          <svg 
-            v-if="!mobileMenuOpen"
-            class="w-6 h-6" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <svg v-if="!mobileMenuOpen" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16" />
           </svg>
-          <svg 
-            v-else
-            class="w-6 h-6" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          <svg v-else class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div
-      :class="[
-        'md:hidden absolute top-full left-0 w-full bg-gray-800 border-b border-gray-700 shadow-lg transition-all duration-300 ease-in-out',
-        mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      ]"
+    <transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="opacity-0 -translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-2"
     >
-      <div class="px-4 py-6 space-y-4">
-        <NuxtLink
-          to="/"
-          @click="closeMobileMenu"
-          :class="route.path === '/' ? 'text-orange-400 font-semibold' : 'text-gray-300 hover:text-orange-400'"
-          class="block py-2 text-base transition-colors duration-200"
-        >
-          Home
-        </NuxtLink>
-        <NuxtLink
-          to="/about"
-          @click="closeMobileMenu"
-          :class="route.path.startsWith('/about') ? 'text-orange-400 font-semibold' : 'text-gray-300 hover:text-orange-400'"
-          class="block py-2 text-base transition-colors duration-200"
-        >
-          About
-        </NuxtLink>
-        <NuxtLink
-          to="/services"
-          @click="closeMobileMenu"
-          :class="route.path.startsWith('/services') ? 'text-orange-400 font-semibold' : 'text-gray-300 hover:text-orange-400'"
-          class="block py-2 text-base transition-colors duration-200"
-        >
-          Services
-        </NuxtLink>
-        <NuxtLink
-          to="/contact"
-          @click="closeMobileMenu"
-          :class="route.path.startsWith('/contact') ? 'text-orange-400 font-semibold' : 'text-gray-300 hover:text-orange-400'"
-          class="block py-2 text-base transition-colors duration-200"
-        >
-          Contact
-        </NuxtLink>
-        
-        <!-- Mobile CTA -->
-        <div class="pt-4 border-t border-gray-700">
+      <div v-if="mobileMenuOpen" class="border-t border-white/10 bg-neutral-950 md:hidden">
+        <div class="container-x space-y-1 py-4">
           <NuxtLink
-            to="/contact"
+            v-for="item in links"
+            :key="item.to"
+            :to="item.to"
             @click="closeMobileMenu"
-            class="inline-flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+            class="block rounded-xl px-4 py-3 text-base font-medium transition-colors"
+            :class="isActive(item.to)
+              ? 'bg-white/10 text-white'
+              : 'text-neutral-400 hover:bg-white/5 hover:text-white'"
           >
-            Get Quote
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
+            {{ item.label }}
           </NuxtLink>
+          <div class="pt-3">
+            <NuxtLink to="/contact" @click="closeMobileMenu" class="btn btn-lg btn-primary w-full">
+              Get a Quote
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </NuxtLink>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </transition>
+  </header>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { ref, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 
-const mobileMenuOpen = ref(false);
 const route = useRoute();
-const router = useRouter();
-const activeSection = ref('');
+const mobileMenuOpen = ref(false);
+const scrolled = ref(false);
 
+const links = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/services', label: 'Services' },
+  { to: '/contact', label: 'Contact' },
+];
 
-const setActiveSection = (section: string) => {
-  activeSection.value = section;
+const isActive = (to: string) => {
+  if (to === '/') return route.path === '/';
+  return route.path.startsWith(to);
 };
-
-watch(
-  () => route.path,
-  (newPath) => {
-    if (newPath === '/#home') {
-      activeSection.value = 'home';
-    } else if (newPath.startsWith('/about')) {
-      activeSection.value = 'about';
-    } else if (newPath.startsWith('/contact')) {
-      activeSection.value = 'contact';
-    } else if (newPath.startsWith('/services')) {
-      activeSection.value = 'services';
-    }
-  },
-  { immediate: true }
-);
 
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
@@ -187,15 +126,16 @@ const closeMobileMenu = () => {
   mobileMenuOpen.value = false;
 };
 
+const onScroll = () => {
+  scrolled.value = window.scrollY > 8;
+};
+
+onMounted(() => {
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll);
+});
 </script>
-
-<style scoped>
-a {
-  transition: color 0.3s ease-in-out;
-}
-
-a.font-bold {
-  color: #ffa500;
-  font-weight: bold;
-}
-</style>
