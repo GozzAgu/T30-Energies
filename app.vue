@@ -2,9 +2,12 @@
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <BackToTop />
 </template>
 
 <script setup>
+import BackToTop from '~/components/BackToTop.vue';
+
 useHead({
   title: "T30 Energies - Your Energy Solution",
   meta: [
